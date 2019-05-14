@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- GoogleFont -->
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Concert+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Concert+One|Germania=One|Roboto" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +30,7 @@
         </div>
     </nav>
     <main>
-                                        <!-- Main Page -->
+        <!-- Main Page -->
         <div class="container">
             <div class="row">
                 <div class="col s3">
@@ -80,7 +82,7 @@
 
 
 
-                                            <!-- Parent Form -->
+        <!-- Parent Form -->
 
         <div class="container">
             <div class="row">
@@ -89,67 +91,102 @@
                 </div>
                 <div id="content" class="col s6">
                     <content>
-                        <h3>Parent's Form</h3>
-                        <label for="name">Name</label>
-                        <br>
-                        <input type="name">
-                        <br>
-                        <label for="address">Address</label>
-                        <br>
-                        <input type="address">
-                        <br>
-                        <label for="email">Email</label>
-                        <br>
-                        <input type="name">
-                    </content>
-                    <div class="container">
+                    <h3 class="center">Parent Form</h3>
+                    <form class="col s12">
                         <div class="row">
-                            <div class="col s6">
-                                <p>What are your kids like?</p>
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" class="filled-in" checked="checked" />
-                                            <span>Filled in</span>
-                                        </label>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" class="filled-in" checked="checked" />
-                                            <span>Filled in</span>
-                                        </label>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" class="filled-in" checked="checked" />
-                                            <span>Filled in</span>
-                                        </label>
-                                    </p>
-
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Last Name</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">folder_special</i>
+                                    <input id="icon_password" type="password" class="validate">
+                                    <label for="icon_password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">add_a_photo</i>
+                                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                            <label for="textarea1">Photo Link</label>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="s 6">
-                                <label for="kids-count">How Many Kids?</label>
-                                <input type="name">
-                                <label for="date">Date Needed</label>
-                                <input type="name">
-                                <label for="questions">Any questions?</label>
-                                <input type="name">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">more</i>
+                                    <input id="zipCode" type="text" class="validate">
+                                    <label for="icon_prefix">Enter Your Zip Code</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">child_care</i>
+                                    <input id="numKids" type="text" class="validate">
+                                    <label for="numKids">How many children do you have?</label>
+                                </div>
                             </div>
                         </div>
+                        <br>
+                        <div class="row">
+                            <p><i class="material-icons prefix">pets</i>Do you have any pets in the home?
+                                <label>
+                                    <input type="checkbox" class="filled-in boxNo" />
+                                    <span class="textYes">Yes</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="filled-in boxno" />
+                                    <span class="textNo">No</span>
+                                </label>
+                            </p>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <p><i class="material-icons prefix">directions_car</i>Are you able to provide
+                                transportation?
+                                <label>
+                                    <input type="checkbox" class="filled-in boxNo" />
+                                    <span class="textYes">Yes</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="filled-in boxno" />
+                                    <span class="textNo">No</span>
+                                </label>
+                            </p>
+                        </div>
+                    </form>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">comment</i>
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Add a comment </label>
                     </div>
-
+                </div>
+                </form>
+                <img src="./assets/img/robert-collins-333411-unsplash.jpg" id="kImg" alt=""
+                    class="responsive-img z-depth-5" alt="">
                 </div>
                 <div class="col s3">
 
                 </div>
+            </content>
 
             </div>
-
-        </div>
         </div>
 
-                                            <!-- Babysitter's Form -->
+        <!-- Babysitter's Form -->
         <div class="container">
             <div class="row">
                 <div class="col s3">
@@ -158,91 +195,130 @@
                 <!-- Enter In the Content-->
                 <div id="content" class="col s6">
                     <content>
-                        <h3>Babysitter's Form</h3>
-                        <label for="name">Name</label>
-                        <br>
-                        <input type="name">
-                        <br>
-                        <label for="address">Address</label>
-                        <br>
-                        <input type="address">
-                        <br>
-                        <label for="email">Email</label>
-                        <br>
-                        <input type="name">
-                    </content>
-                    <div class="container">
+                    <h3 class="center">Babysitter's Form</h3>
+                    <form class="col s12">
                         <div class="row">
-                            <div class="col s6">
-                                <p>What are your kids like?</p>
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" class="filled-in" checked="checked" />
-                                            <span>Filled in</span>
-                                        </label>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" class="filled-in" checked="checked" />
-                                            <span>Filled in</span>
-                                        </label>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" class="filled-in" checked="checked" />
-                                            <span>Filled in</span>
-                                        </label>
-                                    </p>
-
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Last Name</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">folder_special</i>
+                                    <input id="icon_password" type="password" class="validate">
+                                    <label for="icon_password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">add_a_photo</i>
+                                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                            <label for="textarea1">Photo Link</label>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="s 6">
-                                <label for="kids-count">How Many Kids?</label>
-                                <input type="name">
-                                <label for="date">Date Needed</label>
-                                <input type="name">
-                                <label for="questions">Any questions?</label>
-                                <input type="name">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">more</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Enter Your Zip Code</label>
+                                </div>
                             </div>
-                        </div>
+                            <br>
+                            <div class="row">
+                                <p><i class="material-icons prefix">local_hospital</i>Do you have your CPR
+                                    certification?
+                                    <label>
+                                        <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                        <span class="textYes">Yes</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="no" class="filled-in boxno" />
+                                        <span class="textNo">No</span>
+                                    </label>
+                                </p>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <p><i class="material-icons prefix">menu</i>Do you have references?
+                                    <label>
+                                        <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                        <span class="textYes">Yes</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="no" class="filled-in boxno" />
+                                        <span class="textNo">No</span>
+                                    </label>
+                                </p>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <p><i class="material-icons prefix">pets</i>Are you comfortable with pets in the home?
+                                    <label>
+                                        <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                        <span class="textYes">Yes</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="no" class="filled-in boxno" />
+                                        <span class="textNo">No</span>
+                                    </label>
+                                </p>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <p><i class="material-icons prefix">directions_car</i>Do you have you own means of
+                                    transportation?
+                                    <label>
+                                        <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                        <span class="textYes">Yes</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="no" class="filled-in boxno" />
+                                        <span class="textNo">No</span>
+                                    </label>
+                                </p>
+                            </div>
+                    </form>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">comment</i>
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Add a comment </label>
                     </div>
-
                 </div>
-                <div class="col s3">
-
-                </div>
+                </form>
+                <img src="./assets/img/jude-beck-552276-unsplash.jpg" alt="" class="responsive-img z-depth-5" alt="">
+            </content>
+            </div>
+            <div class="col s3">
 
             </div>
-
         </div>
         </div>
 
-                                            <!-- Sitter Results -->
+        <!-- Sitter Results -->
 
         <div class="container">
             <div class="row">
                 <div class="col s3">
-                    <!-- Optional! Add content to this area -->
+                    
                 </div>
                 <div id="content" class="col s6">
                     <content>
-                        <h2>Sitter</h2>
-                        <div class="divider"></div>
-                        <div class="section">
-                            <h5>Section 1</h5>
-                            <p>Stuff</p>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="section">
-                            <h5>Section 2</h5>
-                            <p>Stuff</p>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="section">
-                            <h5>Section 3</h5>
-                            <p>Stuff</p>
-                        </div>
+                        <!-- Insert All CONTENT/INFO/DATA here!! -->
                     </content>
                 </div>
                 <div class="col s3">
@@ -252,7 +328,7 @@
             </div>
         </div>
 
-                                            <!-- Sitter Contact -->
+        <!-- Sitter Contact -->
         <div class="container">
             <div class="row">
                 <div class="col s3">
@@ -260,7 +336,7 @@
                 </div>
                 <div class="s6">
                     <content>
-                    <!-- Insert Content here -->                    
+                        <!-- Insert Content here -->
                     </content>
                 </div>
                 <div class="s3">
