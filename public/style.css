@@ -1,0 +1,52 @@
+body {
+    background: rgb(117, 170, 177);
+}
+
+main {
+    margin: 0px 0px 0px 0px;
+}
+h1 {
+    letter-spacing: 4px;
+    text-align: center;
+    color: rgb(255, 208, 0);
+    font-family: Concert One;
+    text-shadow: 2px 2px 2px white,
+                 4px 4px 2px black;
+    font-size: 160px;
+    margin: 100px 0px 0px 0px;
+}
+#content {
+    background: rgb(253, 238, 152);
+    margin: 80px 20px 0px 20px;
+    padding: 0px 40px 280px 40px;
+    width: 100%;
+}
+
+p {
+    margin: 0px 40px
+}
+
+.col.s6 {
+    padding: 0px 40px;
+}
+
+#user-form {
+    padding: 40px 0px 0px 0px;
+}
+
+/* icon */
+i {
+   color: rgb(255, 196, 0);
+   margin: 40px 0px 0px 50px;
+}
+
+nav {
+    background: rgb(252, 194, 34);
+    position: fixed;
+}
+
+footer {
+    background: rgb(83, 119, 124);
+    color: white;
+}
+
