@@ -100,4 +100,21 @@ module.exports = function(app) {
       console.log("Day Selected Updated");
     });
   });
+
+  // Check for login
+  app.put("/api/sitters/login", function(rep, res) {
+    db.Sitter.findOne({
+      where: {
+        email: req.body.email,
+        password: req.body.password
+      }
+    }).then(function(dbParent) {
+      if (dbParent === null) {
+        alert("Email and Password do not match.");
+      } else {
+        res.json(dbParent);
+        // redirect to update availability
+      }
+    });
+  });
 };
