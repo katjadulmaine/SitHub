@@ -61,7 +61,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [5, 5],
-        inInt: true
+        isInt: true
       }
     },
     daySelected: {
