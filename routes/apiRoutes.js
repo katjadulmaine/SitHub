@@ -77,7 +77,7 @@ module.exports = function(app) {
       hasReferences: req.body.hasReferences,
       hasTransportation: req.body.hasTransportation,
       comments: req.body.comments,
-      zipCode: req.body.zipcode,
+      zipCode: req.body.zipCode,
       daySelected: req.body.daySelected
     }).then(function(dbSitter) {
       res.json(dbSitter);
