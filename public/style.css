@@ -80,3 +80,9 @@ i.material-icons-prefix {
 #camicon {
     margin: 24px 0px 0px 40px;
 }
+
+#sitterPage-legend {
+    background: white;
+    width: 200px;
+    margin: 0px 0px 0px -120px
+}
