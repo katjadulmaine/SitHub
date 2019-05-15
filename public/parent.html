@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sithub</title>
+    <!-- Materalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- FontAwesomeIcons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- GoogleFont -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Concert+One|Germania=One|Roboto" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+                <div class="row">
+                    <div class="col s3">
+        
+                    </div>
+                    <div id="content" class="col s6">
+                        <content>
+                            <h3 class="center">Parent Form</h3>
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label id="form-label" for="icon_prefix">First Name</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label id="form-label" for="icon_prefix">Last Name</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">email</i>
+                                            <input id="email" type="email" class="validate">
+                                            <label id="form-label" for="email">Email</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">folder_special</i>
+                                            <input id="icon_password" type="password" class="validate">
+                                            <label id="form-label" for="icon_password">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <i id="camicon" class="material-icons prefix">add_a_photo</i>
+                                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                                    <label id="photo-label" for="textarea1">Photo Link</label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">more</i>
+                                            <input id="zipCode" type="text" class="validate">
+                                            <label id="form-label" for="icon_prefix">Enter Your Zip Code</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">child_care</i>
+                                            <input id="numKids" type="text" class="validate">
+                                            <label id="form-label" for="numKids">How many children do you have?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <p><i class="material-icons prefix">pets</i>Do you have any pets in the home?
+                                        <label>
+                                            <input type="checkbox" class="filled-in boxNo" />
+                                            <span class="textYes">Yes</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="filled-in boxno" />
+                                            <span class="textNo">No</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <p><i class="material-icons prefix">directions_car</i>Are you able to provide
+                                        transportation?
+                                        <label>
+                                            <input type="checkbox" class="filled-in boxNo" />
+                                            <span class="textYes">Yes</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="filled-in boxno" />
+                                            <span class="textNo">No</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </form>
+        
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">comment</i>
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label id="comment-sec" for="textarea1">Add a comment </label>
+                            </div>
+                            </form>
+                            <img src="./assets/img/robert-collins-333411-unsplash.jpg" id="kImg" alt=""
+                                class="responsive-img z-depth-5" alt="">
+                            <!-- SUBMIT FORM-->
+                            <button id="parent-submit">Find a Sitter!</button>
+                        </content>
+                    </div>
+                    <div class="col s3">
+        
+                    </div>
+        
+        
+                </div>
+            </div>
+</body>
+</html>
