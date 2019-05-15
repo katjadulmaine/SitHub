@@ -9,11 +9,16 @@
     <!-- Materalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- FontAwesomeIcons-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- GoogleFont -->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Concert+One|Germania=One|Roboto" rel="stylesheet">
     <!--Import Google Icon Font-->
@@ -36,25 +41,44 @@
         <div class="container">
             <div class="row">
                 <div class="col s3">
-
+                    
                 </div>
                 <div id="content" class="col s6">
                     <!-- icon -->
                     <a id="brand-icon" href="#"><i class="fas fa-baby-carriage fa-5x"></i></a>
-
+                    
                     <content>
-
+                        
                         <h1>Sithub</h1>
-
+                        
                     </content>
-
+                    
                 </div>
                 <div class="col s3">
-
+                    
                 </div>
-
+                
             </div>
         </div>
+        
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Sitter or parent</h4>
+                    <!-- <p>A bunch of text</p> -->
+                    <div id="form1">
+                            <button type="button">Parent Form!</button>
+                        </div>
+        
+                        <div id="form2">
+                            <button type="button">Sitter Form!</button>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                        </div>
+                    </div>
+            </div>
+        
         <!-- Footer -->
         <footer>
             <div class="container">
@@ -81,41 +105,42 @@
                 </div>
             </div>
         </footer>
-
-
-
+        
+        
+        
         <!-- Parent Form -->
-
-        <div class="container">
-            <div class="row">
-                <div class="col s3">
-
-                </div>
-                <div id="content" class="col s6">
-                    <content>
-                    <h3 class="center">Parent Form</h3>
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label id="form-label" for="icon_prefix">First Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label id="form-label" for="icon_prefix">Last Name</label>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" class="validate">
-                                    <label id="form-label" for="email">Email</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">folder_special</i>
-                                    <input id="icon_password" type="password" class="validate">
-                                    <label id="form-label" for="icon_password">Password</label>
+        <div id="parent">
+            <div class="container">
+                <div class="row">
+                    <div class="col s3">
+                        
+                    </div>
+                    <div id="content" class="col s6">
+                        <content>
+                            <h3 class="center">Parent Form</h3>
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label id="form-label" for="icon_prefix">First Name</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label id="form-label" for="icon_prefix">Last Name</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">email</i>
+                                            <input id="email" type="email" class="validate">
+                                            <label id="form-label" for="email">Email</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">folder_special</i>
+                                            <input id="icon_password" type="password" class="validate">
+                                            <label id="form-label" for="icon_password">Password</label>
+                                            
                                 </div>
                             </div>
                             <div class="row">
@@ -187,8 +212,9 @@
 
             </div>
         </div>
-
+    </div>
         <!-- Babysitter's Form -->
+        <div id="sitter">
         <div class="container">
             <div class="row">
                 <div class="col s3">
@@ -310,7 +336,7 @@
             </div>
         </div>
         </div>
-
+    </div>
         <!-- Sitter Results -->
 
         <div class="container">
@@ -353,8 +379,7 @@
 
 
     </main>
-
-
+    <script type=text/javascript src="./forms.js"></script>
 </body>
 
 </html>
