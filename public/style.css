@@ -16,7 +16,7 @@ h1 {
     margin: 100px 0px 0px 0px;
 }
 h3 {
-    margin: 50px 0px;
+    margin: 50px 0px 80px 0px;
 }
 #content {
     background: rgb(253, 238, 152);
@@ -38,7 +38,7 @@ p {
 }
 
 /* icon */
-i {
+.fa-baby-carriage {
    color: rgb(255, 196, 0);
    margin: 40px 0px 0px 50px;
 }
@@ -57,4 +57,26 @@ footer {
     margin: 0px 0px 0px 60px;
 }
 
+label {
+    margin: 0px 0px;
+}
 
+i.material-icons-prefix {
+    margin: 20px 0px 0px -35px;
+}
+
+#form-label {
+    margin: -30px 0px 0px 80px;
+}
+#textarea1 {
+    width: 750px;
+    text-align: center;
+    margin: 20px 0px 0px 80px;
+}
+
+#photo-label {
+    margin: 0px 0px 0px 84px;
+}
+#camicon {
+    margin: 24px 0px 0px 40px;
+}
