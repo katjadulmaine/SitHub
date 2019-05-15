@@ -66,40 +66,12 @@ module.exports = function(sequelize, DataTypes) {
         inInt: true
       }
     },
-    monday: {
-      type: DataTypes.BOOLEAN,
+    daySelected: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: true
-    },
-    tuesday: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    },
-    wednesday: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    },
-    thursday: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    },
-    friday: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    },
-    saturday: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    },
-    sunday: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
+      validate: {
+        len: [1]
+      }
     }
   });
   return Parent;
