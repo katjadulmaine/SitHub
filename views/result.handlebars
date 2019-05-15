@@ -10,6 +10,12 @@
                 <h3>Sitters</h3>
                 <ul class="collection">
                     {{#each sitter}}
+                    <img src="{{pic}}" alt="sitter" width="150px" height="auto">
+                    {{firstName}} {{lastName}}
+                    {{#if knowsCPR}}
+                    <i class="far fa-check-square"></i>
+                    {{/if}}
+
                     {{/each}}
                 </ul>
             </content>
