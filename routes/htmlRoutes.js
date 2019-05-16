@@ -23,9 +23,7 @@ module.exports = function(app) {
   });
 
   app.get("/sitter/date", function(req, res) {
-    res.render("date", {
-      msg: "Welcome!"
-    });
+    res.render("date", { layout: "bootstrap" });
   });
 
   // Render 404 page for any unmatched routes
