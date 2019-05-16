@@ -55,8 +55,8 @@ module.exports = function(app) {
   app.get("/api/sitters", function(req, res) {
     db.Sitter.findAll({
       where: {
-        daySelected: req.params.daySelected,
-        zipCode: req.params.zipCode
+        daySelected: req.query.daySelected,
+        zipCode: req.query.zipCode
       }
     }).then(function(dbSitter) {
       res.render("result", {
