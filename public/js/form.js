@@ -5,7 +5,7 @@
 //     }
 //     setTimeout(modalPop,3000)
 // });
-    
+
 //     // parent form click function
 //     $("#modal1").click(function(){
 //         $("#parent").toggle();
