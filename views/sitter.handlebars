@@ -24,8 +24,8 @@
                             </div>
                             <div class="row">
                                 <div>
-                                <label for="">Create a password</label>
-                                <input id="passwordSitter" type="text">
+                                    <label for="">Create a password</label>
+                                    <input id="passwordSitter" type="text">
                                 </div>
                             </div>
                         </div>
@@ -99,46 +99,45 @@
                         <div class="col s12">
                             <input id="picSitter" type="text" placeholder="Image URL">
                         </div>
-                        <div class="col s12">
-                            <input id="commentSitter" type="text" placeholder="Any additional comments?">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">comment</i>
+                            <textarea id="textarea1" class="materialize-textarea" id="commentSitter"></textarea>
+                            <label id="form-label" for="textarea1">Add a comment </label>
                         </div>
+                        <div class="input-field col s12">
+                            <select multiple class="selectedStuff" id="day">
+                                <option value="" disabled selected>Choose Your Days</option>
+                                <option value="1">Monday</option>
+                                <option value="2">Tuesday</option>
+                                <option value="3">Wednesday</option>
+                                <option value="4">Thursday</option>
+                                <option value="5">Friday</option>
+                                <option value="6">Saturday</option>
+                                <option value="7">Sunday</option>
+                            </select>
+                        </div>
+                        <!-- SUBMIT -->
+                        <button class="btn waves-effect waves-light" id="sitter-submit">Submit Form <i
+                                class="material-icons right">send</i></button>
                     </div>
                 </form>
 
-                <!-- SUBMIT -->
-
-                <button class="btn waves-effect waves-light" id="sitter-submit">Submit Form <i
-                        class="material-icons right">send</i></button>
             </content>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">comment</i>
-                    <textarea id="textarea1" class="materialize-textarea" id="commentSitter"></textarea>
-                    <label id="form-label" for="textarea1">Add a comment </label>
-                </div>
-                <div class="input-field col s12">
-                    <select multiple class="selectedStuff" id="day">
-                        <option value="" disabled selected>Choose your days</option>
-                        <option value="1">Monday</option>
-                        <option value="2">Tuesday</option>
-                        <option value="3">Wednesday</option>
-                        <option value="4">Thursday</option>
-                        <option value="5">Friday</option>
-                        <option value="6">Saturday</option>
-                        <option value="7">Sunday</option>
-                    </select>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea" id="daySelectedSitter"></textarea>
-                                <label for="textarea1">Which day do you need a sitter?</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>>
-                
         </div>
         <div class="col s3">
 
         </div>
     </div>
+</div>
+
+<script>
+    //single choice Parent day
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+    $("#sitter-submit").on('click', function (event) {
+        event.preventDefault();
+        let values = $('.selectedStuff').val()
+        console.log(values)
+    });
+</script>
