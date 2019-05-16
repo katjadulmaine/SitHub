@@ -7,7 +7,7 @@ module.exports = function(app) {
     db.Parent.findAll({
       where: {
         daySelected: req.body.daySelected,
-        zipcode: req.body.zipcode
+        zipCode: req.body.zipCode
       }
     }).then(function(dbParents) {
       res.json(dbParents);
@@ -26,7 +26,7 @@ module.exports = function(app) {
       hasPets: req.body.hasPets,
       provideTransport: req.body.provideTransport,
       comments: req.body.comments,
-      zipcode: req.body.zipcode,
+      zipCode: req.body.zipCode,
       daySelected: req.body.daySelected
     }).then(function(dbParent) {
       res.json(dbParent);
@@ -56,7 +56,7 @@ module.exports = function(app) {
     db.Sitter.findAll({
       where: {
         daySelected: req.body.daySelected,
-        zipcode: req.body.zipcode
+        zipCode: req.body.zipCode
       }
     }).then(function(dbSitter) {
       res.json(dbSitter);
@@ -77,7 +77,7 @@ module.exports = function(app) {
       hasReferences: req.body.hasReferences,
       hasTransportation: req.body.hasTransportation,
       comments: req.body.comments,
-      zipCode: req.body.zipcode,
+      zipCode: req.body.zipCode,
       daySelected: req.body.daySelected
     }).then(function(dbSitter) {
       res.json(dbSitter);
