@@ -100,6 +100,7 @@ var parentFormSubmit = function(event, cb) {
 //NEED TO ADD A FUNCTION TO GET SITTER DATA FOR RESULT LIST;
 
 //Function to go to sitter form
+// eslint-disable-next-line no-unused-vars
 var sitterSubmit = function(event) {
   event.prevenDefault();
 
