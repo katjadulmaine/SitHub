@@ -31,17 +31,3 @@ module.exports = function(app) {
     res.render("404");
   });
 };
-
-// Load results
-// app.get("/results", function(req, res) {
-//   db.Sitter.findAll({
-//     where: {
-//       daySelected: req.body.daySelected,
-//       zipCode: req.body.zipCode
-//     }
-//   }).then(function(dbSitter) {
-//     res.render("result", {
-//       sitter: dbSitter
-//     });
-//   });
-// });
