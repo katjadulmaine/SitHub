@@ -65,6 +65,7 @@ module.exports = function(app) {
 
   //Post new Sitter row
   app.post("/api/sitters", function(req, res) {
+    console.log(req.body);
     db.Sitter.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -76,10 +77,11 @@ module.exports = function(app) {
       hasReferences: req.body.hasReferences,
       hasTransportation: req.body.hasTransportation,
       comments: req.body.comments,
-      zipcode: req.body.zipcode,
+      zipCode: req.body.zipcode,
       daySelected: req.body.daySelected
     }).then(function(dbSitter) {
       res.json(dbSitter);
+      //res.send("hi");
       console.log("New Sitter Added");
     });
   });
@@ -98,6 +100,23 @@ module.exports = function(app) {
     ).then(function(dbSitter) {
       res.json(dbSitter);
       console.log("Day Selected Updated");
+    });
+  });
+
+  // Check for login
+  app.put("/api/sitters/login", function(rep, res) {
+    db.Sitter.findOne({
+      where: {
+        email: req.body.email,
+        password: req.body.password
+      }
+    }).then(function(dbParent) {
+      if (dbParent === null) {
+        alert("Email and Password do not match.");
+      } else {
+        res.json(dbParent);
+        // redirect to update availability
+      }
     });
   });
 };

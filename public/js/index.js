@@ -97,3 +97,24 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+  // parent form click function
+  $("#form1").click(function(){
+    $("#parent").toggle();
+    $("#main").hide();
+    $(".modal-content").hide();
+    $("#sitterOrParent").hide();
+    $("#sitter").hide();
+    $("#mainPage").hide();
+    $("footer").hide();
+});
+// sitter form click function
+$("#form2").click(function(){
+    $("#sitter").toggle();
+    $("#main").hide();
+    $("#modal1").hide();
+    $("#sitterOrParent").hide();
+    $("#parent").hide();
+    $("#mainPage").hide();
+    $("footer").hide();
+});
