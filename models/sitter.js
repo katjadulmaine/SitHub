@@ -66,10 +66,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     daySelected: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     }
   });
   return Sitter;
