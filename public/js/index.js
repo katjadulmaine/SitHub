@@ -6,6 +6,7 @@ var $findSitterBtn = $("#findSitter");
 // var $password = $("#password");
 // var $pic = $("#pic");
 var $zipCode = $("#zipCode");
+var $daySelectedParent = $("#daySelectedParent");
 //var $numKids = $("#numKids");
 //var $hasPets = $("#hasPets");
 //var $giveTransport = $("#giveTransport");
@@ -13,6 +14,7 @@ var $zipCode = $("#zipCode");
 var $parentGetsitterBtn = $("#parent-submit");
 
 // Get references to sitter-flow page elements
+var $sitterSubmit = $("#sitterSubmit");
 var $firstNameSitter = $("#firstNameSitter");
 var $lastNameSitter = $("#lastNameSitter");
 var $emailSitter = $("#emailSitter");
@@ -24,6 +26,7 @@ var $referencesYes = $("#referencesYes");
 var $petsYes = $("#petsYes");
 var $carYes = $("#carYes");
 var $commentSitter = $("#commentSitter");
+var $daySelectedSitter = $("#daySelectedSitter");
 var $addSitterBtn = $("#sitter-submit");
 
 // The API object contains methods for each kind of request we'll make
@@ -72,43 +75,7 @@ var API = {
       type: "GET"
     });
   }
-
-  // deleteExample: function(id) {
-  //   return $.ajax({
-  //     url: "api/sitters/" + id,
-  //     type: "DELETE"
-  //   });
-  // }
 };
-
-// refreshExamples gets new examples from the db and repopulates the list
-// var refreshExamples = function() {
-//   API.getExamples().then(function(data) {
-//     var $examples = data.map(function(example) {
-//       var $a = $("<a>")
-//         .text(example.text)
-//         .attr("href", "/example/" + example.id);
-
-//       var $li = $("<li>")
-//         .attr({
-//           class: "list-group-item",
-//           "data-id": example.id
-//         })
-//         .append($a);
-
-//       var $button = $("<button>")
-//         .addClass("btn btn-danger float-right delete")
-//         .text("ｘ");
-
-//       $li.append($button);
-
-//       return $li;
-//     });
-
-//     $exampleList.empty();
-//     $exampleList.append($examples);
-//   });
-// };
 
 // Function to go to parent form
 var parentSubmit = function(event) {
@@ -122,50 +89,51 @@ var parentFormSubmit = function(event, cb) {
   event.preventDefault();
 
   var parentData = {
-    zipCode: $zipCode.val().trim()
+    zipCode: $zipCode.val().trim(),
+    daySelected: $daySelectedParent.val().trim()
   };
 
   API.getSitters;
   cb(parentData);
 };
 
-//
+//NEED TO ADD A FUNCTION TO GET SITTER DATA FOR RESULT LIST;
 
-var handleFormSubmit = function(event) {
+//Function to go to sitter form
+var sitterSubmit = function(event) {
+  event.prevenDefault();
+
+  API.goToSitter;
+};
+
+//Function to add sitter
+var addSitter = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  // New sitter object
+  var newSitter = {
+    firstName: $firstNameSitter.val().trim(),
+    lastName: $lastNameSitter.val().trim(),
+    email: $emailSitter.val().trim(),
+    password: $passwordSitter.val().trim(),
+    pic: $picSitter.val().trim(),
+    knowsCPR: $cprYes.val().trim(),
+    petsOK: $petsYes.val().trim(),
+    hasReferences: $referencesYes.val().trim(),
+    hasTransportation: $carYes.val().trim(),
+    comments: $commentSitter.val().trim(),
+    zipCode: $zipCodeSitter.val().trim(),
+    //this will fail until we can get a day selected value
+    daySelected: $daySelectedSitter.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.createSitter(newSitter).then(function(data) {
+    console.log(data);
   });
 };
 
-// Add event listeners to the submit and delete buttons
-// $submitBtn.on("click", handleFormSubmit);
-// $exampleList.on("click", ".delete", handleDeleteBtnClick);
+// Add event listeners to the submit and nav buttons
 $findSitterBtn.on("click", parentSubmit);
 $parentGetsitterBtn.on("click", parentFormSubmit);
+$sitterSubmit.on("click", sitterSubmit);
+$addSitterBtn.on("click", addSitter);
