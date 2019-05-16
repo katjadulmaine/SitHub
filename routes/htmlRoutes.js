@@ -1,4 +1,4 @@
-var db = require("../models");
+// var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
@@ -29,15 +29,15 @@ module.exports = function(app) {
 };
 
 // Load results
-app.get("/results", function(req, res) {
-  db.Sitter.findAll({
-    where: {
-      daySelected: req.body.daySelected,
-      zipCode: req.body.zipCode
-    }
-  }).then(function(dbSitter) {
-    res.render("result", {
-      sitter: dbSitter
-    });
-  });
-});
+// app.get("/results", function(req, res) {
+//   db.Sitter.findAll({
+//     where: {
+//       daySelected: req.body.daySelected,
+//       zipCode: req.body.zipCode
+//     }
+//   }).then(function(dbSitter) {
+//     res.render("result", {
+//       sitter: dbSitter
+//     });
+//   });
+// });

@@ -10,6 +10,23 @@
                 <h3>Sitters</h3>
                 <ul class="collection">
                     {{#each sitter}}
+                    <img src="{{pic}}" alt="sitter" width="150px" height="auto">
+                    {{firstName}} {{lastName}}
+                    {{#if knowsCPR}}
+                    <i class="far fa-check-square checks"> <span class="checks">Knows CPR</span></i>
+                    {{/if}}
+                    {{#if petsOk}}
+                    <i class="far fa-check-square checks"> <span class="checks">Pets OK</span></i>
+                    {{/if}}
+                    {{#if hasReferences}}
+                    <i class="far fa-check-square checks"> <span class="checks">Has References</span></i>
+                    {{/if}}
+                    {{#if hasTransportation}}
+                    <i class="far fa-check-square checks"> <span class="checks">Has Transportation</span></i>
+                    {{/if}}
+                    {{#if comments}}
+                    <p>Comments and/or Questions: {{comments}}</p>
+                    {{/if}}
                     {{/each}}
                 </ul>
             </content>
