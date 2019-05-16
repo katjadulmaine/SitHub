@@ -167,4 +167,3 @@ $("#form2").click(function() {
 $parentGetsitterBtn.on("click", parentFormSubmit);
 //$sitterSubmit.on("click", sitterSubmit);
 $addSitterBtn.on("click", addSitter);
-
