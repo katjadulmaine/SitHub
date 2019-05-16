@@ -1,5 +1,7 @@
 body {
   background: rgb(117, 170, 177);
+  font-family: Baloo Paaji;
+  
 }
 
 main {
@@ -17,17 +19,19 @@ h1 {
 }
 h3 {
   margin: 50px 0px 80px 0px;
+  font-family: Concert One; 
+  color: orange;
 }
 #content {
   background: rgb(253, 238, 152);
-  margin: 80px 20px 0px 20px;
+  margin: 60px 20px 0px 20px;
   padding: 0px 40px 280px 40px;
   width: 100%;
 }
 
-p {
+/* p {
   margin: 0px 40px
-}
+} */
 
 .col.s6 {
   padding: 0px 40px;
@@ -45,7 +49,6 @@ p {
 
 nav {
   background: rgb(252, 194, 34);
-  position: fixed;
 }
 
 footer {
@@ -56,26 +59,37 @@ footer {
 .brand-logo {
   margin: 0px 0px 0px 60px;
 }
-
-label {
-  margin: 0px 0px;
-}
-
+/* Icons */
 i.material-icons-prefix {
   margin: 20px 0px 0px -35px;
 }
-
-#form-label {
-  margin: -30px 0px 0px 80px;
+#i-comment {
+  margin: 40px 0px 0px 20px;
 }
-#textarea1 {
-  width: 750px;
-  text-align: center;
-  margin: 20px 0px 0px 80px;
+.fa-times {
+  color: red;
 }
 
-#photo-label {
-  margin: 0px 0px 0px 84px;
+#sitterPage-legend {
+  background: white;
+  width: 200px;
+  margin: 0px 0px 0px -120px;
+  padding: 10px;
+  background-color: orange;
+ 
+}
+
+#parent-submit, #sitter-submit {
+  margin: 100px 0px 0px 350px;
+
+}
+
+#checkbox-label {
+  margin: 0px 0px 0px 10px;
+}
+
+label {
+  color: black;
 }
 #camicon {
   margin: 24px 0px 0px 40px;
@@ -83,3 +97,4 @@ i.material-icons-prefix {
 .checks {
   margin: 5px;
 }
+

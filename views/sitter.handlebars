@@ -9,52 +9,44 @@
                 <h3 class="center">Babysitter's Form</h3>
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" type="text" class="validate" id="firstNameSitter">
-                            <label id="form-label" for="icon_prefix">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" type="text" class="validate" id="lastNameSitter">
-                            <label id="form-label" for="icon_prefix">Last Name</label>
-                        </div>
                         <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">email</i>
-                                <input id="email" type="email" class="validate" id="emailSitter">
-                                <label id="form-label" for="email">Email</label>
+                            <div class="col s6">
+                                <label for="">First Name</label>
+                                <input id="firstNameSitter" type="text">
+                                <label for="">Email</label>
+                                <input id="emailSitter" type="text">
                             </div>
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">folder_special</i>
-                                <input id="icon_password" type="password" class="validate" id="passwordSitter">
-                                <label id="form-label" for="icon_password">Password</label>
+                            <div class="col s6">
+                                <label for="">Last Name</label>
+                                <input id="lastNameSitter" type="text">
+                                <label for="">Zip Code</label>
+                                <input id="zipCodeSitter" type="text">
                             </div>
-                        </div>
-                        <div class="row">
-                            <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <i id="camicon" class="material-icons prefix">add_a_photo</i>
-                                        <textarea id="textarea1" class="materialize-textarea" id="picSitter"></textarea>
-                                        <label id="photo-label" for="textarea1">Photo Link</label>
-                                    </div>
+                            <div class="row">
+                                <div>
+                                <label for="">Create a password</label>
+                                <input id="passwordSitter" type="text">
                                 </div>
-                            </form>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">more</i>
-                                <input id="icon_prefix" type="text" class="validate" id="zipCodeSitter">
-                                <label id="form-label" for="icon_prefix">Enter Your Zip Code</label>
                             </div>
+                        </div>
+                        <div id="checkbox-label" class="row">
+                            <p><i class="material-icons prefix">pets</i>Do you have any pets in the home?
+                                <label>
+                                    <input id="cprYes" type="checkbox" class="filled-in boxNo" />
+                                    <span class="textYes">Yes</span>
+                                </label>
+                                <label>
+                                    <input id="cprNo" type="checkbox" class="filled-in boxno" />
+                                    <span class="textNo">No</span>
+                                </label>
+                            </p>
                         </div>
                         <br>
-                        <div class="row">
+                        <div id="checkbox-label" class="row">
                             <p><i class="material-icons prefix">local_hospital</i>Do you have your CPR
                                 certification?
                                 <label>
-                                    <input type="checkbox" id="yes" id="cprYes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
@@ -64,10 +56,10 @@
                             </p>
                         </div>
                         <br>
-                        <div class="row">
+                        <div id="checkbox-label" class="row">
                             <p><i class="material-icons prefix">menu</i>Do you have references?
                                 <label>
-                                    <input type="checkbox" id="yes" id="referencesYes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
@@ -77,11 +69,11 @@
                             </p>
                         </div>
                         <br>
-                        <div class="row">
+                        <div id="checkbox-label" class="row">
                             <p><i class="material-icons prefix">pets</i>Are you comfortable with pets in the
                                 home?
                                 <label>
-                                    <input type="checkbox" id="yes" id="petsYes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
@@ -91,11 +83,11 @@
                             </p>
                         </div>
                         <br>
-                        <div class="row">
+                        <div id="checkbox-label" class="row">
                             <p><i class="material-icons prefix">directions_car</i>Do you have you own means of
                                 transportation?
                                 <label>
-                                    <input type="checkbox" id="yes" id="carYes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
@@ -104,7 +96,36 @@
                                 </label>
                             </p>
                         </div>
+                        <div class="col s12">
+                            <input id="picSitter" type="text" placeholder="Image URL">
+                        </div>
+                        <div class="col s12">
+                            <input id="commentSitter" type="text" placeholder="Any additional comments?">
+                        </div>
+                    </div>
                 </form>
+
+                <!-- SUBMIT -->
+
+                <button class="btn waves-effect waves-light" id="sitter-submit">Submit Form <i
+                        class="material-icons right">send</i></button>
+            </content>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">comment</i>
+                    <textarea id="textarea1" class="materialize-textarea" id="commentSitter"></textarea>
+                    <label id="form-label" for="textarea1">Add a comment </label>
+                </div>
+                <div class="input-field col s12">
+                    <select multiple class="selectedStuff" id="day">
+                        <option value="" disabled selected>Choose your days</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
@@ -117,13 +138,7 @@
                 </div>>
                 
         </div>
-        </form>
-        <img src="./assets/img/jude-beck-552276-unsplash.jpg" alt="" class="responsive-img z-depth-5" alt="">
-        <!-- SUBMIT -->
-        <button id="sitter-submit">Submit Form</button>
-        </content>
-    </div>
-    <div class="col s3">
+        <div class="col s3">
 
+        </div>
     </div>
-</div>
