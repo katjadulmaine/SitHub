@@ -1,99 +1,139 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+// Get references to parent-flow page elements
+var $findSitterBtn = $("#findSitter");
+// var $firstName = $("#firstName");
+// var $lastName = $("#lastName");
+// var $email = $("#email");
+// var $password = $("#password");
+// var $pic = $("#pic");
+var $zipCode = $("#zipCode");
+var $daySelectedParent = $("#daySelectedParent");
+//var $numKids = $("#numKids");
+//var $hasPets = $("#hasPets");
+//var $giveTransport = $("#giveTransport");
+//var $comments = $("#comments");
+var $parentGetsitterBtn = $("#parent-submit");
+
+// Get references to sitter-flow page elements
+var $sitterSubmit = $("#sitterSubmit");
+var $firstNameSitter = $("#firstNameSitter");
+var $lastNameSitter = $("#lastNameSitter");
+var $emailSitter = $("#emailSitter");
+var $passwordSitter = $("#passwordSitter");
+var $picSitter = $("#picSitter");
+var $zipCodeSitter = $("#zipCodeSitter");
+var $cprYes = $("#cprYes");
+var $referencesYes = $("#referencesYes");
+var $petsYes = $("#petsYes");
+var $carYes = $("#carYes");
+var $commentSitter = $("#commentSitter");
+var $daySelectedSitter = $("#daySelectedSitter");
+var $addSitterBtn = $("#sitter-submit");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  //Create request to load parent form
+
+  goToParent: function() {
+    return $.ajax({
+      url: "/parent",
+      type: "GET"
+    });
+  },
+
+  //Request to add a new sitter
+  createSitter: function(sitter) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/sitters",
+      data: JSON.stringify(sitter)
     });
   },
-  getExamples: function() {
+
+  //Request to return sitters where daySelected and zipcode match
+  getSitters: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/sitters",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+
+  //Request to get sitter Parent chooses to contact
+  getChosenSitter: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      url: "api/sitters/" + id,
+      type: "GET"
+    });
+  },
+
+  //route to sitter intake form
+  goToSitter: function() {
+    return $.ajax({
+      url: "/sitter",
+      type: "GET"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// Function to go to parent form
+var parentSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  API.goToParent;
+};
+
+// Function to return parent Zipcode and go to Result page
+var parentFormSubmit = function(event, cb) {
+  event.preventDefault();
+
+  var parentData = {
+    zipCode: $zipCode.val().trim(),
+    daySelected: $daySelectedParent.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
+  API.getSitters;
+  cb(parentData);
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+//NEED TO ADD A FUNCTION TO GET SITTER DATA FOR RESULT LIST;
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+//Function to go to sitter form
+var sitterSubmit = function(event) {
+  event.prevenDefault();
+
+  API.goToSitter;
+};
+
+//Function to add sitter
+var addSitter = function(event) {
+  event.preventDefault();
+
+  // New sitter object
+  var newSitter = {
+    firstName: $firstNameSitter.val().trim(),
+    lastName: $lastNameSitter.val().trim(),
+    email: $emailSitter.val().trim(),
+    password: $passwordSitter.val().trim(),
+    pic: $picSitter.val().trim(),
+    knowsCPR: $cprYes.val().trim(),
+    petsOK: $petsYes.val().trim(),
+    hasReferences: $referencesYes.val().trim(),
+    hasTransportation: $carYes.val().trim(),
+    comments: $commentSitter.val().trim(),
+    zipCode: $zipCodeSitter.val().trim(),
+    //this will fail until we can get a day selected value
+    daySelected: $daySelectedSitter.val().trim()
+  };
+
+  API.createSitter(newSitter).then(function(data) {
+    console.log(data);
   });
 };
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// Add event listeners to the submit and nav buttons
+$findSitterBtn.on("click", parentSubmit);
+$parentGetsitterBtn.on("click", parentFormSubmit);
+$sitterSubmit.on("click", sitterSubmit);
+$addSitterBtn.on("click", addSitter);
