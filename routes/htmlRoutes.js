@@ -1,36 +1,43 @@
-//var db = require("../models");
-var path = require("path");
+// var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/sithub.html"));
+    res.render("index", {
+      msg: "Welcome!"
+    });
   });
+
   // Load Parent page
   app.get("/parent", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/parent.html"));
+    res.render("parent", {
+      msg: "Welcome!"
+    });
   });
 
-  // Load Sitter Intake
+  // Load Sitter Page
   app.get("/sitter", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/sitter.html"));
+    res.render("sitter", {
+      msg: "Welcome!"
+    });
   });
-
-  // Load Sitter Results
-  app.get("/result", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/result.html"));
-  });
-
-  //app.get("/example/:id", function(req, res) {
-  //  db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //    res.render("example", {
-  //      example: dbExample
-  //    });
-  //  });
-  // });
 
   // Render 404 page for any unmatched routes
-  app.get("/404", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/404.html"));
+  app.get("*", function(req, res) {
+    res.render("404");
   });
 };
+
+// Load results
+// app.get("/results", function(req, res) {
+//   db.Sitter.findAll({
+//     where: {
+//       daySelected: req.body.daySelected,
+//       zipCode: req.body.zipCode
+//     }
+//   }).then(function(dbSitter) {
+//     res.render("result", {
+//       sitter: dbSitter
+//     });
+//   });
+// });

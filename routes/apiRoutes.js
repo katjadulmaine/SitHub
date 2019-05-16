@@ -7,7 +7,7 @@ module.exports = function(app) {
     db.Parent.findAll({
       where: {
         daySelected: req.body.daySelected,
-        zipcode: req.body.zipcode
+        zipCode: req.body.zipCode
       }
     }).then(function(dbParents) {
       res.json(dbParents);
@@ -26,7 +26,7 @@ module.exports = function(app) {
       hasPets: req.body.hasPets,
       provideTransport: req.body.provideTransport,
       comments: req.body.comments,
-      zipcode: req.body.zipcode,
+      zipCode: req.body.zipCode,
       daySelected: req.body.daySelected
     }).then(function(dbParent) {
       res.json(dbParent);
@@ -56,7 +56,7 @@ module.exports = function(app) {
     db.Sitter.findAll({
       where: {
         daySelected: req.body.daySelected,
-        zipcode: req.body.zipcode
+        zipCode: req.body.zipCode
       }
     }).then(function(dbSitter) {
       res.json(dbSitter);
@@ -65,6 +65,7 @@ module.exports = function(app) {
 
   //Post new Sitter row
   app.post("/api/sitters", function(req, res) {
+    console.log(req.body);
     db.Sitter.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -76,10 +77,11 @@ module.exports = function(app) {
       hasReferences: req.body.hasReferences,
       hasTransportation: req.body.hasTransportation,
       comments: req.body.comments,
-      zipcode: req.body.zipcode,
+      zipCode: req.body.zipCode,
       daySelected: req.body.daySelected
     }).then(function(dbSitter) {
       res.json(dbSitter);
+      //res.send("hi");
       console.log("New Sitter Added");
     });
   });
