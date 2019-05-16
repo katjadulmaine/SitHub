@@ -91,15 +91,10 @@ i.material-icons-prefix {
 label {
   color: black;
 }
-<<<<<<< HEAD
-::placeholder {
-  color: orange;
-}
-=======
 #camicon {
   margin: 24px 0px 0px 40px;
 }
 .checks {
   margin: 5px;
 }
->>>>>>> 54e67e03cadbe2b2d4ab5b90b6a239ec7aeb387e
+
