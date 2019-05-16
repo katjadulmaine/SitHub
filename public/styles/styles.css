@@ -97,4 +97,62 @@ label {
 .checks {
   margin: 5px;
 }
+#modal1 {
+  background: rgb(253, 238, 152);
+}
+#form1 {
+  padding: 2%;
+  float: left;
+  margin-top: 1%;
+  background: rgb(117, 170, 177);
+  color: #343434;
+}
+#parBtnM {
+  background:  rgb(117, 170, 177)!important;
+  border-color: rgb(117, 170, 177)!important;
+}
+#form2 {
+  padding: 2%;
+  float: left;
+  margin-top: 1%;
+  background:  rgb(117, 170, 177);
+  margin-left: 8%;
+  color: #343434;
+} 
+#sitBtnM {
+  background:  rgb(117, 170, 177)!important;
+  border-color: rgb(117, 170, 177)!important;
+
+} 
+#cancel-modal {
+  margin-bottom: 2%;
+  background:  rgb(117, 170, 177);
+}
+.modal-footer {
+  background:  rgb(253, 238, 152)!important;
+}
+#m1t {
+  text-align: center;
+}
+#m1p {
+  font-size-adjust: 20px;
+}
+#parent-submit {
+  padding: 2.2%;
+  align-self: center;
+  margin-top: 1%;
+  background:  rgb(117, 170, 177);
+  color: #343434;
+  font-size-adjust: 20px;
+}
+#sitter-submit {
+  padding-bottom: 2.2%;
+  align-self: center;
+  margin-top: 8%;
+  background:  rgb(117, 170, 177);
+  color: #343434;
+  font-size-adjust: 20px;
+}
+
+ 
 
