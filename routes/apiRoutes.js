@@ -6,8 +6,8 @@ module.exports = function(app) {
   app.get("/api/parents", function(req, res) {
     db.Parent.findAll({
       where: {
-        daySelected: req.body.daySelected,
-        zipCode: req.body.zipCode
+        daySelected: req.params.daySelected,
+        zipCode: req.params.zipCode
       }
     }).then(function(dbParents) {
       res.json(dbParents);
