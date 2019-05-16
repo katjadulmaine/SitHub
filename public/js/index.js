@@ -14,17 +14,17 @@ var $daySelectedParent = $("#daySelectedParent");
 var $parentGetsitterBtn = $("#parent-submit");
 
 // Get references to sitter-flow page elements
-var $sitterSubmit = $("#sitterSubmit");
-var $firstNameSitter = $("#firstNameSitter");
+var $sitterSubmit = $("#sitterSubmit"); /* did not id */
+var $firstNameSitter = $("#firstNameSitter"); 
 var $lastNameSitter = $("#lastNameSitter");
-var $emailSitter = $("#emailSitter");
-var $passwordSitter = $("#passwordSitter");
+var $emailSitter = $("#emailSitter"); 
+var $passwordSitter = $("#passwordSitter"); /* did not id */
 var $picSitter = $("#picSitter");
 var $zipCodeSitter = $("#zipCodeSitter");
 var $cprYes = $("#cprYes");
 var $referencesYes = $("#referencesYes");
 var $petsYes = $("#petsYes");
-var $carYes = $("#carYes");
+var $carYes = $("#carYes"); 
 var $commentSitter = $("#commentSitter");
 var $daySelectedSitter = $("#daySelectedSitter");
 var $addSitterBtn = $("#sitter-submit");
