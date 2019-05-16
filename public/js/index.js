@@ -1,5 +1,5 @@
 // Get references to parent-flow page elements
-var $findSitterBtn = $("#findSitter");
+//var $findSitterBtn = $("#findSitter");
 // var $firstName = $("#firstName");
 // var $lastName = $("#lastName");
 // var $email = $("#email");
@@ -14,7 +14,7 @@ var $daySelectedParent = $("#daySelectedParent");
 var $parentGetsitterBtn = $("#parent-submit");
 
 // Get references to sitter-flow page elements
-var $sitterSubmit = $("#sitterSubmit");
+//var $sitterSubmit = $("#sitterSubmit");
 var $firstNameSitter = $("#firstNameSitter");
 var $lastNameSitter = $("#lastNameSitter");
 var $emailSitter = $("#emailSitter");
@@ -33,12 +33,12 @@ var $addSitterBtn = $("#sitter-submit");
 var API = {
   //Create request to load parent form
 
-  goToParent: function() {
-    return $.ajax({
-      url: "/parent",
-      type: "GET"
-    });
-  },
+  // goToParent: function() {
+  //   return $.ajax({
+  //     url: "/parent",
+  //     type: "GET"
+  //   });
+  // },
 
   //Request to add a new sitter
   createSitter: function(sitter) {
@@ -66,23 +66,23 @@ var API = {
       url: "api/sitters/" + id,
       type: "GET"
     });
-  },
-
-  //route to sitter intake form
-  goToSitter: function() {
-    return $.ajax({
-      url: "/sitter",
-      type: "GET"
-    });
   }
+
+  //   //route to sitter intake form
+  //   goToSitter: function() {
+  //     return $.ajax({
+  //       url: "/sitter",
+  //       type: "GET"
+  //     });
+  //   }
 };
 
 // Function to go to parent form
-var parentSubmit = function(event) {
-  event.preventDefault();
+// var parentSubmit = function(event) {
+//   event.preventDefault();
 
-  API.goToParent;
-};
+//   API.goToParent;
+// };
 
 // Function to return parent Zipcode and go to Result page
 var parentFormSubmit = function(event, cb) {
@@ -163,7 +163,7 @@ $("#form2").click(function() {
   $("footer").hide();
 });
 // Add event listeners to the submit and nav buttons
-$findSitterBtn.on("click", parentSubmit);
+// $findSitterBtn.on("click", parentSubmit);
 $parentGetsitterBtn.on("click", parentFormSubmit);
-$sitterSubmit.on("click", sitterSubmit);
+//$sitterSubmit.on("click", sitterSubmit);
 $addSitterBtn.on("click", addSitter);
