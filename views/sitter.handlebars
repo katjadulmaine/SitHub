@@ -18,39 +18,27 @@
                             </div>
                             <div class="col s6">
                                 <label for="">Last Name</label>
-                                <input id="lastNameSitter" type="text">
+                                <input id="lastNameSitter" type="text" name="lastName">
                                 <label for="">Zip Code</label>
                                 <input id="zipCodeSitter" type="text">
                             </div>
                             <div class="row">
                                 <div>
-                                <label for="">Create a password</label>
-                                <input id="passwordSitter" type="text">
+                                    <label for="">Create a password</label>
+                                    <input id="passwordSitter" type="text">
                                 </div>
                             </div>
-                        </div>
-                        <div id="checkbox-label" class="row">
-                            <p><i class="material-icons prefix">pets</i>Do you have any pets in the home?
-                                <label>
-                                    <input id="cprYes" type="checkbox" class="filled-in boxNo" />
-                                    <span class="textYes">Yes</span>
-                                </label>
-                                <label>
-                                    <input id="cprNo" type="checkbox" class="filled-in boxno" />
-                                    <span class="textNo">No</span>
-                                </label>
-                            </p>
                         </div>
                         <br>
                         <div id="checkbox-label" class="row">
                             <p><i class="material-icons prefix">local_hospital</i>Do you have your CPR
                                 certification?
                                 <label>
-                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yesCPR" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" id="no" class="filled-in boxno" />
+                                    <input type="checkbox" id="noCPR" class="filled-in boxno" />
                                     <span class="textNo">No</span>
                                 </label>
                             </p>
@@ -59,11 +47,11 @@
                         <div id="checkbox-label" class="row">
                             <p><i class="material-icons prefix">menu</i>Do you have references?
                                 <label>
-                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yesRef" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" id="no" class="filled-in boxno" />
+                                    <input type="checkbox" id="noRef" class="filled-in boxno" />
                                     <span class="textNo">No</span>
                                 </label>
                             </p>
@@ -73,11 +61,11 @@
                             <p><i class="material-icons prefix">pets</i>Are you comfortable with pets in the
                                 home?
                                 <label>
-                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yesPets" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" id="no" class="filled-in boxno" />
+                                    <input type="checkbox" id="noPets" class="filled-in boxno" />
                                     <span class="textNo">No</span>
                                 </label>
                             </p>
@@ -87,11 +75,11 @@
                             <p><i class="material-icons prefix">directions_car</i>Do you have you own means of
                                 transportation?
                                 <label>
-                                    <input type="checkbox" id="yes" class="filled-in boxNo" />
+                                    <input type="checkbox" id="yesTrans" class="filled-in boxNo" />
                                     <span class="textYes">Yes</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" id="no" class="filled-in boxno" />
+                                    <input type="checkbox" id="noTrans" class="filled-in boxno" />
                                     <span class="textNo">No</span>
                                 </label>
                             </p>
@@ -99,46 +87,109 @@
                         <div class="col s12">
                             <input id="picSitter" type="text" placeholder="Image URL">
                         </div>
-                        <div class="col s12">
-                            <input id="commentSitter" type="text" placeholder="Any additional comments?">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">comment</i>
+                            <textarea id="textarea1" class="materialize-textarea" id="commentSitter"></textarea>
+                            <label id="form-label" for="textarea1">Add a comment </label>
                         </div>
+                        <div class="input-field col s12">
+                            <select multiple class="selectedStuff" id="day">
+                                <option value="" disabled selected>Choose Your Days</option>
+                                <option value="1">Monday</option>
+                                <option value="2">Tuesday</option>
+                                <option value="3">Wednesday</option>
+                                <option value="4">Thursday</option>
+                                <option value="5">Friday</option>
+                                <option value="6">Saturday</option>
+                                <option value="7">Sunday</option>
+                            </select>
+                        </div>
+                        <!-- SUBMIT -->
+                        <button class="btn waves-effect waves-light" id="sitter-submit">Submit Form <i
+                                class="material-icons right">send</i></button>
                     </div>
                 </form>
 
-                <!-- SUBMIT -->
-
-                <button class="btn waves-effect waves-light" id="sitter-submit">Submit Form <i
-                        class="material-icons right">send</i></button>
             </content>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">comment</i>
-                    <textarea id="textarea1" class="materialize-textarea" id="commentSitter"></textarea>
-                    <label id="form-label" for="textarea1">Add a comment </label>
-                </div>
-                <div class="input-field col s12">
-                    <select multiple class="selectedStuff" id="day">
-                        <option value="" disabled selected>Choose your days</option>
-                        <option value="1">Monday</option>
-                        <option value="2">Tuesday</option>
-                        <option value="3">Wednesday</option>
-                        <option value="4">Thursday</option>
-                        <option value="5">Friday</option>
-                        <option value="6">Saturday</option>
-                        <option value="7">Sunday</option>
-                    </select>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea" id="daySelectedSitter"></textarea>
-                                <label for="textarea1">Which day do you need a sitter?</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>>
-                
         </div>
         <div class="col s3">
 
         </div>
     </div>
+</div>
+
+<script>
+    //single choice Parent day
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+    var $zipCode = $("#zipCode");
+    var $daySelectedParent = $("#daySelectedParent");
+    var $parentGetsitterBtn = $("#parent-submit");
+
+    // Get references to sitter-flow page elements
+    //var $sitterSubmit = $("#sitterSubmit");
+    var $firstNameSitter = $("#firstNameSitter");
+    var $lastNameSitter = $("#lastNameSitter");
+    var $emailSitter = $("#emailSitter");
+    var $passwordSitter = $("#passwordSitter");
+    var $picSitter = $("#picSitter");
+    var $zipCodeSitter = $("#zipCodeSitter");
+    var cpr;
+    var refs;
+    var pets;
+    var transportation;
+    var $commentSitter = $("#commentSitter");
+    // var $daySelectedSitter = $("#daySelectedSitter");
+
+    function validate() {
+        if (document.getElementById('yesPets').checked) {
+            pets = true;
+        } else {
+            pets = false
+        }
+        if (document.getElementById('yesCPR').checked) {
+            cpr = true;
+        } else {
+            cpr = false
+        }
+        if (document.getElementById('yesRef').checked) {
+            refs = true;
+        } else {
+            refs = false
+        }
+        if (document.getElementById('yesTrans').checked) {
+            transportation = true;
+        } else {
+            tansportation = false
+        }
+    }
+
+    $("#sitter-submit").on('click', function (event) {
+        event.preventDefault();
+        validate();
+        var values = $('.selectedStuff').val()
+        console.log(values)
+        var newSitter = {
+            "firstName": $firstNameSitter.val().trim(),
+            "lastName": $lastNameSitter.val().trim(),
+            "email": $emailSitter.val().trim(),
+            "password": $passwordSitter.val().trim(),
+            "pic": $picSitter.val().trim(),
+            "knowsCPR": cpr,
+            "petsOK": pets,
+            "hasReferences": refs,
+            "hasTransportation": transportation,
+            "comments": $commentSitter.val(),
+            "zipCode": parseInt($zipCodeSitter.val().trim()),
+            "daySelected": values
+        };
+        console.log(newSitter)
+        $.post("/api/sitters", newSitter)
+        .then(function (data) {
+            console.log(data)
+            //location.reload();
+        });
+    });
+
+</script>

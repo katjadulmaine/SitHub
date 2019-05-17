@@ -6,8 +6,8 @@ module.exports = function(app) {
   app.get("/api/parents", function(req, res) {
     db.Parent.findAll({
       where: {
-        daySelected: req.params.daySelected,
-        zipCode: req.params.zipCode
+        daySelected: req.body.daySelected,
+        zipCode: req.body.zipCode
       }
     }).then(function(dbParents) {
       res.json(dbParents);
@@ -55,8 +55,8 @@ module.exports = function(app) {
   app.get("/api/sitters", function(req, res) {
     db.Sitter.findAll({
       where: {
-        daySelected: req.body.daySelected,
-        zipCode: req.body.zipCode
+        daySelected: req.query.daySelected,
+        zipCode: req.query.zipCode
       }
     }).then(function(dbSitter) {
       res.render("result", {
