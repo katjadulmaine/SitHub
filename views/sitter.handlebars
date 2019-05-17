@@ -106,7 +106,7 @@
                         </div>
                         <!-- SUBMIT -->
                         <div class="center-align">
-                             <button class="btn waves-effect waves-light" id="sitter-submit" style="margin-top: 160px;">Submit Form <i
+                             <button data-target="modal2" class="btn modal-trigger waves-effect waves-light" id="sitter-submit" style="margin-top: 160px;">Submit Form <i
                                 class="material-icons right">send</i></button>
                         </div>
                        
@@ -204,9 +204,9 @@
         });
 
     $(document).ready(function() {
+        event.preventDefault();
         $(".modal").modal();
         //modalPop = function() {
         //  $("#modal1").modal("open");
-        };
     });
 </script>
