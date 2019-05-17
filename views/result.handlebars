@@ -7,11 +7,20 @@
         </div>
         <div id="content" class="col s6">
             <content>
-                <h3>Sitters</h3>
+                <h3 class="center">Sitters</h3>
+                <div class="container">
+                    <div class="row">
+                        
+                    </div>
+                </div>
+
+
                 <ul class="collection">
                     {{#each sitter}}
-                    <img src="{{pic}}" alt="sitter" width="150px" height="auto">
+                    <img src="{{pic}}" alt="sitter" width="300" height="auto">
+                    <br>
                     {{firstName}} {{lastName}}
+                    <br>
                     {{#if knowsCPR}}
                     <i class="far fa-check-square checks"> <span class="checks">Knows CPR</span></i>
                     {{/if}}
@@ -28,8 +37,11 @@
                     <p>Comments and/or Questions: {{comments}}</p>
                     {{/if}}
                     <p>{{email}}</p>
+                    <hr>
                     {{/each}}
+                    
                 </ul>
+                
             </content>
         </div>
         <div class="col s3">
