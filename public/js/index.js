@@ -56,7 +56,6 @@
 //     daySelected: values
 //   };
 
-
 // $("#sitter-submit").on('click', function (event) {
 //   event.preventDefault();
 //   validate();
@@ -146,9 +145,9 @@
 // };
 
 // modal
-$(document).ready(function () {
+$(document).ready(function() {
   $(".modal").modal();
-  modalPop = function () {
+  modalPop = function() {
     $("#modal1").modal("open");
   };
   setTimeout(modalPop, 1500);
@@ -156,7 +155,7 @@ $(document).ready(function () {
 });
 
 // parent form click function
-$("#form1").click(function () {
+$("#form1").click(function() {
   $("#parent").toggle();
   $("#main").hide();
   $(".modal-content").hide();
@@ -166,7 +165,7 @@ $("#form1").click(function () {
   $("footer").hide();
 });
 // sitter form click function
-$("#form2").click(function () {
+$("#form2").click(function() {
   $("#sitter").toggle();
   $("#main").hide();
   $("#modal1").hide();
@@ -175,4 +174,3 @@ $("#form2").click(function () {
   $("#mainPage").hide();
   $("footer").hide();
 });
-
