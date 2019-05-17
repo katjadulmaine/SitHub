@@ -53,11 +53,14 @@ module.exports = function(app) {
 
   //Get Sitters where daySelected matches
   app.get("/api/sitters", function(req, res) {
+    // req.query.daySelected
+    let day = req.query.daySelected
     db.Sitter.findAll({
       where: {
-        daySelected: req.query.daySelected,
-        zipCode: req.query.zipCode
-      }
+      [day]: true
+      },
+      zipCode: req.query.zipCode
+      
     }).then(function(dbSitter) {
       res.render("result", {
         sitter: dbSitter
