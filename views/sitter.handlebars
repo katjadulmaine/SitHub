@@ -105,7 +105,7 @@
                             </select>
                         </div>
                         <!-- SUBMIT -->
-                        <button class="btn waves-effect waves-light" id="sitter-submit">Submit Form <i
+                        <button class="btn waves-effect waves-light" data-target="modal2" class="btn modal-trigger" id="sitter-submit">Submit Form <i
                                 class="material-icons right">send</i></button>
                     </div>
                 </form>
@@ -118,7 +118,7 @@
                 </h4> <hr>
                 <p>Families from your area will be in touch!</p>
                 <div id="returnHome">
-                        <button onclick="window.location.href = '/parent'">Find a Sitter!</button>
+                        <button onclick="window.location.href = '/'">Home</button>
                 </div>
                 <div class="modal-footer">
                     <a id="cancel-modal" href="" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
@@ -198,11 +198,12 @@
         $.post("/api/sitters", newSitter)
         .done(function (data) {
             console.log(data)
-            $("#modal2").modal();
-            modalPop = function() {
-                $("#modal1").modal("open");
-            };
-            console.log("modal working");
         });
+
+    $(document).ready(function() {
+        $(".modal").modal();
+        //modalPop = function() {
+        //  $("#modal1").modal("open");
+        };
     });
 </script>
