@@ -112,8 +112,18 @@
 
             </content>
         </div>
-        <div class="col s3">
-
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h4>Thanks for signing up as a sitter! 
+                </h4> <hr>
+                <p>Families from your area will be in touch!</p>
+                <div id="returnHome">
+                        <button onclick="window.location.href = '/parent'">Find a Sitter!</button>
+                </div>
+                <div class="modal-footer">
+                    <a id="cancel-modal" href="" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -188,8 +198,11 @@
         $.post("/api/sitters", newSitter)
         .done(function (data) {
             console.log(data)
-            //location.reload();
+            $("#modal2").modal();
+            modalPop = function() {
+                $("#modal1").modal("open");
+            };
+            console.log("modal working");
         });
     });
-
 </script>
