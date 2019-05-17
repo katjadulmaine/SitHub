@@ -14,7 +14,6 @@
                             <label for="">Email</label>
                             <input type="text">
                         </div>
-<<<<<<< HEAD
                         <div class="col s6">
                             <label for="">Last Name</label>
                             <input type="text">
@@ -57,43 +56,6 @@
                     </div>
                     <div class="row">
                         <img src="./assets/img/robert-collins-333411-unsplash.jpg" id="kImg" alt=""
-=======
-                        <div id="checkbox-label" class="row">
-                            <p><i class="material-icons prefix">pets</i> Do you have any pets in the home?
-                                <label>
-                                    <input id="petsYes" type="checkbox" class="filled-in boxNo" />
-                                    <span class="textYes">Yes</span>
-                                </label>
-                                <label>
-                                    <input id="petsNo" type="checkbox" class="filled-in boxno" />
-                                    <span class="textNo">No</span>
-                                </label>
-                            </p>
-                        </div>
-                        <br>
-                        <div id="checkbox-label" class="row">
-                            <p><i class="material-icons prefix">directions_car</i> Are you able to provide
-                                transportation?
-                                <label>
-                                    <input id="carYes" type="checkbox" class="filled-in boxNo" />
-                                    <span class="textYes">Yes</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox" class="filled-in boxno" />
-                                    <span class="textNo">No</span>
-                                </label>
-                            </p>
-                        </div>              
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">comment</i>
-                                <textarea id="textarea1" class="materialize-textarea" id="comments"></textarea>
-                                <label id="comment-sec" for="textarea1">Add a comment </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <img src="./assets/img/robert-collins-333411-unsplash.jpg" id="kImg" alt=""
->>>>>>> b03dd80bc13406e115736b0b72928d68d610e4ce
                             class="responsive-img z-depth-5" alt="">
                     </div>
                     <div class="row">
@@ -109,25 +71,11 @@
                                 <option value="7">Sunday</option>
                             </select>
                         </div>
-<<<<<<< HEAD
                     </div>
                     <!-- SUBMIT FORM-->
                     <button class="btn waves-effect waves-light" id="parent-submit">Find a Sitter!<i
                             class="material-icons right">zoom_in</i></button>
                 </form>
-=======
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea" id="daySelectedParent" name="daySelected"></textarea>
-                                <label for="textarea1">Which day do you need a sitter?</label>
-                            </div>
-                        </div>
-                <!-- SUBMIT FORM-->
-                        <div class="center-align">
-                        <button class="btn waves-effect waves-light" id="parent-submit">Find a Sitter!<i class="material-icons right">zoom_in</i></button>
-                        </div>
-                    </form>
->>>>>>> b03dd80bc13406e115736b0b72928d68d610e4ce
             </content>
         </div>
     </div>
@@ -137,16 +85,4 @@
     $(document).ready(function () {
         $('select').formSelect();
     });
-    function actionOnSubmit() {
-
-        //Get the select select list and store in a variable
-        var e = document.getElementById("dayparent");
-
-        //Get the selected value of the select list
-        var formaction = e.options[e.selectedIndex].value;
-
-        //Update the form action
-        document.daySelected.action = formaction;
-
-    }
 </script>
