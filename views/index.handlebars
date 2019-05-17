@@ -1,85 +1,109 @@
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Sithub</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Sign In</a></li>
-                <li>|</li>
-                <li><a href="#">Sign Up</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main>
-        <!-- Main Page -->
-        <div class="container">
-            <div class="row">
-                <div class="col s3">
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Sithub</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#">Sign In</a></li>
+      <li>|</li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <!-- Main Page -->
+  <div class="container">
+    <div class="row">
+      <div class="col s3">
 
-                </div>
-                <div id="content" class="col s6">
-                    <!-- icon -->
-                    <a id="brand-icon" href="#"><i class="fas fa-baby-carriage fa-5x"></i></a>
+      </div>
+      <div id="content" class="col s6">
+        <!-- icon -->
+        <a id="brand-icon" href="#"><i class="fas fa-baby-carriage fa-5x"></i></a>
 
-                    <content>
+        <content>
 
-                        <h1>Sithub</h1>
+          <h1>Sithub</h1>
 
-                    </content>
+        </content>
 
-                </div>
-                <div class="col s3">
+      </div>
+      <div class="col s3">
 
-                </div>
+      </div>
 
-            </div>
-        </div>
     </div>
+  </div>
+  </div>
 
 
-    <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Welcome to SitHub, please click to find a sitter or to add yourself to our </h4> <hr>
-                <!-- <p>A bunch of text</p> -->
-                <div id="form1">
-                        <button onclick="window.location.href = '/parent'">Find a Sitter!</button>
-                </div>
-                <div id="form2">
-                    <button onclick="window.location.href = '/sitter'">Become a Sitter!</button>
-                </div>
-                <div class="modal-footer">
-                    <a id="cancel-modal" href="" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                </div>
-            </div>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal"
+    style="background: rgba(115, 162, 165, 0.568); border: 4px solid rgb(81, 116, 121); height: 500px; padding-top: 45px;">
+    <div class="modal-content" style="">
+      <h4 id="modal-header"
+        style="color: rgb(255, 199, 45); text-align: center; letter-spacing: 4px; font-size: 50px; text-shadow: 1px 1px 2px black;">
+        Welcome to SitHub
+      </h4>
+
+      <p id="p-modal"
+        style="font-size: 25px; font-weight: normal; text-align: center; color: rgb(233, 233, 233); letter-spacing: 3px; text-shadow: 1px 1px 2px black;">
+        Are you looking for a babysitter or wants to be
+        childcare giver?</p>
+      <!-- <p>A bunch of text</p> -->
+
+      <div style="text-align: center;" id="form1">
+        <button onclick="window.location.href = '/parent'"
+          style="width: 150px; height: 60px; border-radius: 20px; margin: 5px; font-weight: bold; background: white; font-size: 18px; cursor: pointer; color: orange; text-shadow: 1px 1px 1px black; letter-spacing: 2x;">Find
+          a
+          Sitter!</button>
+      </div>
+
+      <div style="text-align: center;" id="form2">
+        <button onclick="window.location.href = '/sitter'"
+          style="width: 150px; height: 60px; border-radius: 20px; background: orange; color: white; font-weight: bold; font-size: 18px; cursor: pointer; text-shadow: 1px 1px 1px black; letter-spacing: 2px;">Become
+          a
+          Sitter!</button>
+      </div>
+
+      <br>
+      <a id="cancel-modal" style="position: absolute; top: 5px; right: 0px;" href=""
+        class="modal-close waves-effect waves-green btn-flat"><i class="fas fa-times"></i></a>
+
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>About Us</h5>
+          <p id="footer-p">Sithub is an online babysitting and caregiver platform. We connect families with caregivers
+            and babysitters to help you be there for the ones you love when life happens or just looking for a night
+            out. Sithub provides information and tools to help babysitters, caregivers and parents make informed, safe
+            and best decisions when it comes to selecting an appropriate candidate.
+            The information contained in member profiles, job posts and applications are supplied by babysitters and
+            caregivers themselves and is not information generated or verified by Sithub. Sithub does not employ any
+            babysitters or caregivers directly nor are we responsible for the conduct of any care provider or care
+            seeker. </p><a href="#!">Learn More</a>
         </div>
-    <!-- Footer -->
-   <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5>About Us</h5>
-                        <p id="footer-p">Sithub is a node express web application that will enable parents and potential
-                            caregivers/babysitters to find and connectwith one another.</p>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5>Links</h5>
-                        <ul>
-                            <li><a href="#!">FaceBook</a></li>
-                            <li><a href="#!">Snapchat</a></li>
-                            <li><a href="#!">Twitter</a></li>
-                            <li><a href="#!">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2019 Copyright Text
-                    <a href="#!">More Links</a>
-                </div>
-            </div>
-        </footer>
+        <div class="col l4 offset-l2 s12">
+          <h5>Links</h5>
+          <ul>
+            <li><a href="https://www.facebook.com/">FaceBook</a></li>
+            <li><a href="https://www.snapchat.com/">Snapchat</a></li>
+            <li><a href="https://www.twitter.com/">Twitter</a></li>
+            <li><a href="https://ww.instagram.com/">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2019 Copyright
+      </div>
+    </div>
+  </footer>
 
 </main>
 
 
-    </main>
+</main>
