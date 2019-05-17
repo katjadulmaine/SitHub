@@ -150,7 +150,12 @@ function modalPop() {
   $("#modal1").modal("open");
 }
 
-setTimeout(modalPop, 2000);
+function modalDelay() {
+  setTimeout(modalPop, 2000);
+}
+
+modalDelay();
+clearTimeout(modalDelay);
 
 // $(document).ready(function() {
 //   $(".modal").modal();
