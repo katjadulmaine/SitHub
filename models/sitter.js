@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Sitter = sequelize.define("Sitter", {
     firstName: {
       type: DataTypes.STRING,
@@ -64,9 +64,33 @@ module.exports = function(sequelize, DataTypes) {
         isInt: true
       }
     },
-    daySelected: {
-      type: DataTypes.STRING,
-      allowNull: true
+    d1: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    d2: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    d3: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    d4: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    d5: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    d6: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    d7: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     }
   });
   return Sitter;

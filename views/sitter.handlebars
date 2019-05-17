@@ -95,13 +95,13 @@
                         <div class="input-field col s12">
                             <select multiple class="selectedStuff" id="day">
                                 <option value="" disabled selected>Choose Your Days</option>
-                                <option value="1">Monday</option>
-                                <option value="2">Tuesday</option>
-                                <option value="3">Wednesday</option>
-                                <option value="4">Thursday</option>
-                                <option value="5">Friday</option>
-                                <option value="6">Saturday</option>
-                                <option value="7">Sunday</option>
+                                <option value="d1">Monday</option>
+                                <option value="d2">Tuesday</option>
+                                <option value="d3">Wednesday</option>
+                                <option value="d4">Thursday</option>
+                                <option value="d5">Friday</option>
+                                <option value="d6">Saturday</option>
+                                <option value="d7">Sunday</option>
                             </select>
                         </div>
                         <!-- SUBMIT -->
@@ -140,7 +140,13 @@
     var pets;
     var transportation;
     var $commentSitter = $("#commentSitter");
-    // var $daySelectedSitter = $("#daySelectedSitter");
+    var monday;
+    var tuesday;
+    var wednesday;
+    var thursday;
+    var friday;
+    var saturday;
+    var sunday;
 
     function validate() {
         if (document.getElementById('yesPets').checked) {
@@ -163,13 +169,52 @@
         } else {
             tansportation = false
         }
-    }
+    };
+
+    function formatDays(arr) {
+        if (arr.includes(1)) {
+            monday = true;
+        } else {
+            monday = false;
+        }
+        if (arr.includes(2)) {
+            tuesday = true;
+        } else {
+            tuesday = false;
+        }
+        if (arr.includes(3)) {
+            wednesday = true;
+        } else {
+            wednesday = false;
+        }
+        if (arr.includes(4)) {
+            thursday = true;
+        } else {
+            thursday = false;
+        }
+        if (arr.includes(5)) {
+            friday = true;
+        } else {
+            friday = false;
+        }
+        if (arr.includes(6)) {
+            saturday = true;
+        } else {
+            saturday = false;
+        }
+        if (arr.includes(7)) {
+            sunday = true;
+        } else {
+            sunday = false;
+        }
+    };
 
     $("#sitter-submit").on('click', function (event) {
         event.preventDefault();
         validate();
         var values = $('.selectedStuff').val()
         console.log(values)
+        formatDays(values);
         var newSitter = {
             "firstName": $firstNameSitter.val().trim(),
             "lastName": $lastNameSitter.val().trim(),
@@ -182,7 +227,13 @@
             "hasTransportation": transportation,
             "comments": $commentSitter.val(),
             "zipCode": parseInt($zipCodeSitter.val().trim()),
-            "daySelected": values
+            "d1": monday,
+            "d2": tuesday,
+            "d3": wednesday,
+            "d4": thursday,
+            "d5": friday,
+            "d6": saturday,
+            "d7": sunday
         };
         console.log(newSitter)
         $.post("/api/sitters", newSitter)
