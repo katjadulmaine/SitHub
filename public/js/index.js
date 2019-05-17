@@ -145,26 +145,12 @@
 // };
 
 // modal
-var timeId;
-
 function modalPop() {
   $(".modal").modal();
   $("#modal1").modal("open");
 }
 
-function startModal() {
-  timeId = setTimeout(modalPop, 1500);
-}
-
-function stopModal() {
-  clearTimeout(timeId);
-}
-
-$(document).ready(function() {
-  modalPop();
-  startModal();
-  stopModal();
-});
+setTimeout(modalPop, 2000);
 
 // $(document).ready(function() {
 //   $(".modal").modal();
