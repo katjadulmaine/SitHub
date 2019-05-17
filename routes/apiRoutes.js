@@ -63,10 +63,10 @@ module.exports = function(app) {
         sitter: dbSitter
       });
     });
-
+  })
     //Post new Sitter row
     app.post("/api/sitters", function(req, res) {
-      console.log(req.body);
+      console.log("hit");
       db.Sitter.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -120,5 +120,4 @@ module.exports = function(app) {
         }
       });
     });
-  });
-};
+  };

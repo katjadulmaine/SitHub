@@ -186,7 +186,7 @@
         };
         console.log(newSitter)
         $.post("/api/sitters", newSitter)
-        .then(function (data) {
+        .done(function (data) {
             console.log(data)
             //location.reload();
         });
