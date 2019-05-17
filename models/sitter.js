@@ -64,9 +64,26 @@ module.exports = function(sequelize, DataTypes) {
         isInt: true
       }
     },
-    daySelected: {
-      type: DataTypes.STRING,
-      allowNull: true
+    d1: {
+      type: DataTypes.BOOLEAN
+    },
+    d2: {
+      type: DataTypes.BOOLEAN
+    },
+    d3: {
+      type: DataTypes.BOOLEAN
+    },
+    d4: {
+      type: DataTypes.BOOLEAN
+    },
+    d5: {
+      type: DataTypes.BOOLEAN
+    },
+    d6: {
+      type: DataTypes.BOOLEAN
+    },
+    d7: {
+      type: DataTypes.BOOLEAN
     }
   });
   return Sitter;
