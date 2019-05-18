@@ -2,9 +2,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col s3">
+        {{!-- <div class="col s3">
 
-        </div>
+        </div> --}}
         <div id="content" class="col s6">
             <content>
                 <h3 class="center">Sitters</h3>
@@ -15,26 +15,26 @@
                 </div>
 
 
-                <ul class="collection">
+                <ul class="collection font">
                     {{#each sitter}}
                     <img src="{{pic}}" alt="sitter" width="300" height="auto">
                     <br>
                     {{firstName}} {{lastName}}
                     <br>
                     {{#if knowsCPR}}
-                    <i class="far fa-check-square checks"> <span class="checks">Knows CPR</span></i>
+                    <i class="far fa-check-square checks"> <span class="checks font">Knows CPR</span></i>
                     {{/if}}
                     {{#if petsOk}}
-                    <i class="far fa-check-square checks"> <span class="checks">Pets OK</span></i>
+                    <i class="far fa-check-square checks"> <span class="checks font">Pets OK</span></i>
                     {{/if}}
                     {{#if hasReferences}}
-                    <i class="far fa-check-square checks"> <span class="checks">Has References</span></i>
+                    <i class="far fa-check-square checks"> <span class="checks font">Has References</span></i>
                     {{/if}}
                     {{#if hasTransportation}}
-                    <i class="far fa-check-square checks"> <span class="checks">Has Transportation</span></i>
+                    <i class="far fa-check-square checks"> <span class="checks font">Has Transportation</span></i>
                     {{/if}}
                     {{#if comments}}
-                    <p>Comments and/or Questions: {{comments}}</p>
+                    <p class="font">Comments and/or Questions: {{comments}}</p>
                     {{/if}}
                     <p>{{email}}</p>
                     <hr>
