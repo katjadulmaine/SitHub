@@ -82,7 +82,13 @@ module.exports = function(app) {
       hasTransportation: req.body.hasTransportation,
       comments: req.body.comments,
       zipCode: req.body.zipCode,
-      daySelected: req.body.daySelected
+      d1: req.body.d1,
+      d2: req.body.d2,
+      d3: req.body.d3,
+      d4: req.body.d4,
+      d5: req.body.d5,
+      d6: req.body.d6,
+      d7: req.body.d7
     }).then(function(dbSitter) {
       res.json(dbSitter);
       //res.send("hi");
