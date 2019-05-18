@@ -88,3 +88,16 @@ label {
    border: 2px dashed rgba(168, 168, 168, 0.568);
  }
 
+#back-btn {
+  color: rgb(230, 189, 78);
+  letter-spacing: 2px;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  bottom: -220px;
+  right: 220px;
+}
+
+#sign-up-here {
+  color: red;
+  letter-spacing: 1px;
+}
