@@ -148,7 +148,7 @@
             }) .done(function (data) {
                     console.log(data)
                     if (data[0] === 0) {
-                        $("#login-message").append("<p id='error' style='text-align: center;'>Email and Password do not match. Please try again or <a id='sign-up-here' href='/sitter'>Sign Up Here</a></p>")
+                        $("#login-message").append("<p id='error-msg' style='text-align: center;'>Email and Password do not match. Please try again or <a id='sign-up-here' href='/sitter'>Sign Up Here</a></p>")
                     }
                     else {
                         $("#modal3").modal("open");
