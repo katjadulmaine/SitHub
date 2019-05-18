@@ -14,7 +14,7 @@
                                 <label for="">First Name</label>
                                 <input id="firstNameSitter" type="text">
                                 <label for="">Email</label>
-                                <input id="emailSitter" type="email">
+                                <input id="emailSitter" type="text">
                             </div>
                             <div class="col s6">
                                 <label for="">Last Name</label>
@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div>
                                     <label for="">Create a password</label>
-                                    <input id="passwordSitter" type="password">
+                                    <input id="passwordSitter" type="text">
                                 </div>
                             </div>
                         </div>
@@ -240,8 +240,8 @@
             event.preventDefault();
             validate();
             var values = $('.selectedStuff').val()
-            console.log(values)
             formatDays(values);
+            console.log(values)
             var newSitter = {
                 "firstName": $firstNameSitter.val().trim(),
                 "lastName": $lastNameSitter.val().trim(),
