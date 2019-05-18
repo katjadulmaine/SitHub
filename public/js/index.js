@@ -152,25 +152,29 @@ $(document).ready(function() {
   };
   setTimeout(modalPop, 1500);
   console.log("modal working");
-});
+  // $(".modal-content").hide();
+})
+    $("#cancel-modal").click(function() {
+      $("#modal1").close();
+    )};
 
-// parent form click function
-$("#form1").click(function() {
-  $("#parent").toggle();
-  $("#main").hide();
-  $(".modal-content").hide();
-  $("#sitterOrParent").hide();
-  $("#sitter").hide();
-  $("#mainPage").hide();
-  $("footer").hide();
-});
-// sitter form click function
-$("#form2").click(function() {
-  $("#sitter").toggle();
-  $("#main").hide();
-  $("#modal1").hide();
-  $("#sitterOrParent").hide();
-  $("#parent").hide();
-  $("#mainPage").hide();
-  $("footer").hide();
-});
+// // parent form click function
+// $("#form1").click(function() {
+//   $("#parent").toggle();
+//   $("#main").hide();
+//   $(".modal-content").hide();
+//   $("#sitterOrParent").hide();
+//   $("#sitter").hide();
+//   $("#mainPage").hide();
+//   $("footer").hide();
+// });
+// // sitter form click function
+// $("#form2").click(function() {
+//   $("#sitter").toggle();
+//   $("#main").hide();
+//   $("#modal1").hide();
+//   $("#sitterOrParent").hide();
+//   $("#parent").hide();
+//   $("#mainPage").hide();
+//   $("footer").hide();
+// });
