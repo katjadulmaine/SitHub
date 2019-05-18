@@ -1,57 +1,60 @@
 <div class="container">
     <div class="row">
-        <div class="col s3">
+        {{!-- <div class="col s3">
 
-        </div>
-        <div id="content" class="col s6">
+        </div> --}}
+        <div id="content" class="col s12" style="min-height: 90vh">
             <content>
                 <form action="/api/sitters" method="GET">
                     <h3 class="center">Parent Form</h3>
                     <div class="row">
-                        <div class="col s6">
-                            <label for="">First Name</label>
+                        <div class="col s12 l6">
+                            <label class="font" for="">First Name</label>
                             <input type="text">
-                            <label for="">Email</label>
+                            <label class="font" for="">Email</label>
                             <input type="text">
                         </div>
-                        <div class="col s6">
-                            <label for="">Last Name</label>
+                        <div class="col s12 l6">
+                            <label class="font" for="">Last Name</label>
                             <input type="text">
-                            <label for="">Zip Code</label>
+                            <label class="font" for="">Zip Code</label>
                             <input id="zipCode" type="text" name="zipCode">
                         </div>
                     </div>
                     <div id="checkbox-label" class="row">
-                        <p><i style="margin-right: 10px;" class="material-icons prefix">pets</i>Do you have any pets in the home?
+                        <p class="font"><i style="margin-right: 10px;" class="material-icons prefix ">pets</i>Do you have any pets in
+                            the home?
                             <label>
                                 <input id="petsYes" type="checkbox" class="filled-in boxNo" />
-                                <span class="textYes">Yes</span>
+                                <span class="textYes font">Yes</span>
                             </label>
                             <label>
                                 <input id="petsNo" type="checkbox" class="filled-in boxno" />
-                                <span class="textNo">No</span>
+                                <span class="textNovfont">No</span>
                             </label>
                         </p>
                     </div>
                     <br>
                     <div id="checkbox-label" class="row">
-                        <p><i style="margin-right: 10px;" class="material-icons prefix">directions_car</i>Are you able to provide
+                        <p class="font" ><i style="margin-right: 10px;" class="material-icons prefix">directions_car</i>Are you able
+                            to provide
                             transportation?
                             <label>
                                 <input id="carYes" type="checkbox" class="filled-in boxNo" />
-                                <span class="textYes">Yes</span>
+                                <span class="textYes font">Yes</span>
                             </label>
                             <label>
                                 <input type="checkbox" class="filled-in boxno" />
-                                <span class="textNo">No</span>
+                                <span class="textNo font">No</span>
                             </label>
                         </p>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i style="margin-top: 40px;" class="material-icons prefix">comment</i>
-                            <textarea style="margin-top: 40px;" id="textarea1" class="materialize-textarea" id="comments"></textarea>
-                            <label style="margin-top: 40px;" id="comment-sec" for="textarea1">Add a comment </label>
+                            <textarea style="margin-top: 40px;" id="textarea1" class="materialize-textarea"
+                                id="comments"></textarea>
+                            <label style="margin-top: 40px;" id="comment-sec" class="font" for="textarea1">Add a comment </label>
                         </div>
                     </div>
                     <div class="row">
@@ -61,7 +64,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <select class="selectedStuff" id="dayparent" name="daySelected">
-                                <option value="" disabled selected>Which Day Do You Need A Sitter?</option>
+                                <option class="font" value="" disabled selected>Which Day Do You Need A Sitter?</option>
                                 <option value="d1">Monday</option>
                                 <option value="d2">Tuesday</option>
                                 <option value="d3">Wednesday</option>
@@ -74,10 +77,9 @@
                     </div>
                     <!-- SUBMIT FORM-->
                     <div class="center-align">
-                        <button class="btn waves-effect waves-light" id="parent-submit" style="margin-top: 160px;">Find a Sitter!<i
-                            class="material-icons right">zoom_in</i></button>
+                        <button class="btn waves-effect waves-light font" id="parent-submit" style="margin-top: 160px;">Find
+                            a Sitter!<i class="material-icons right">zoom_in</i></button>
                     </div>
-                    
                 </form>
             </content>
         </div>

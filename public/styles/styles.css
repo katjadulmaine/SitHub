@@ -1,6 +1,7 @@
 body {
   background: rgb(117, 170, 177);
   font-family: Baloo Paaji;
+  height: 100%;
 }
 main {
   margin: 0px 0px 0px 0px;
@@ -22,18 +23,18 @@ h3 {
 }
 #content {
   background: rgb(253, 238, 152);
-  margin: 60px 20px 0px 20px;
-  padding: 0px 40px 280px 40px;
-  width: 100%;
+  margin-top: 60px;
+  padding: 0 6% 26% 6%;
+  width: 100%; 
+  height: 90%;
 }
-
-.col.s6 {
+.font {
+  font-family: Oswald;
+  font-size: 17px;
+}
+.col.s6, .col.s12 {
   padding: 0px 40px;
 }
-#user-form {
-  padding: 40px 0px 0px 0px;
-}
-
 /* Icons */
 i.material-icons-prefix {
   margin: 20px 0px 0px -35px;
@@ -55,6 +56,8 @@ nav {
 footer {
   background: rgb(83, 119, 124);
   color: white;
+  /* position: absolute;
+  bottom:0px */
 }
 .brand-logo {
   margin: 0px 0px 0px 60px;
@@ -65,6 +68,7 @@ footer {
 }
 label {
   color: black;
+
 }
 .checks {
   margin: 5px;
@@ -87,4 +91,7 @@ label {
  hr {
    border: 2px dashed rgba(168, 168, 168, 0.568);
  }
+<<<<<<< HEAD
+=======
 
+>>>>>>> fe19b862d2d6ca65772a15957bce48bb1b97058e
