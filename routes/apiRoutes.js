@@ -97,36 +97,25 @@ module.exports = function(app) {
   });
 
   //Update Sitter daySelected
-  app.put("/api/sitters/:id", function(req, res) {
-    db.Sitter.update(
-      {
-        daySelected: req.body.daySelected
-      },
-      {
-        where: {
-          id: req.body.id
-        }
-      }
-    ).then(function(dbSitter) {
-      res.json(dbSitter);
-      console.log("Day Selected Updated");
-    });
-  });
-
   // Check for login
-  app.put("/api/sitters/login", function(rep, res) {
-    db.Sitter.findOne({
+  app.put("/api/sitters/login", function(req, res) {
+    console.log(req.body)
+    db.Sitter.update({
+        d1: req.body.d1,
+        d2: req.body.d2,
+        d3: req.body.d3,
+        d4: req.body.d4,
+        d5: req.body.d5,
+        d6: req.body.d6,
+        d7: req.body.d7
+        }, {
       where: {
         email: req.body.email,
         password: req.body.password
       }
-    }).then(function(dbParent) {
-      if (dbParent === null) {
-        alert("Email and Password do not match.");
-      } else {
-        res.json(dbParent);
-        // redirect to update availability
-      }
+    }).then(function(dbSitter) {
+      res.json(dbSitter)
+      console.log(dbSitter)
     });
   });
 };

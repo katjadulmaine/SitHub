@@ -148,7 +148,6 @@
     //single choice Parent day
     $(document).ready(function () {
         $('select').formSelect();
-        {{!-- event.preventDefault(); --}}
         $(".modal").modal();
         var $zipCode = $("#zipCode");
         var $daySelectedParent = $("#daySelectedParent");
@@ -240,8 +239,8 @@
             event.preventDefault();
             validate();
             var values = $('.selectedStuff').val()
-            console.log(values)
             formatDays(values);
+            console.log(values)
             var newSitter = {
                 "firstName": $firstNameSitter.val().trim(),
                 "lastName": $lastNameSitter.val().trim(),
