@@ -145,14 +145,26 @@
 // };
 
 // modal
-$(document).ready(function() {
+function modalPop() {
   $(".modal").modal();
-  modalPop = function() {
-    $("#modal1").modal("open");
-  };
-  setTimeout(modalPop, 1500);
-  console.log("modal working");
-});
+  $("#modal1").modal("open");
+}
+
+function modalDelay() {
+  setTimeout(modalPop, 2000);
+}
+
+modalDelay();
+clearTimeout(modalDelay);
+
+// $(document).ready(function() {
+//   $(".modal").modal();
+//   modalPop = function() {
+//     $("#modal1").modal("open");
+//   };
+//   setTimeout(modalPop, 1500);
+//   console.log("modal working");
+// });
 
 // parent form click function
 $("#form1").click(function() {

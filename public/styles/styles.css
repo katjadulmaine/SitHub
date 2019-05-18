@@ -73,3 +73,21 @@ label {
 .checks {
   margin: 5px;
 }
+.collection {
+  text-align: center;
+  border: none;
+  height: 800px;
+  overflow: scroll;
+  margin-bottom: 20px;
+
+}
+ img {
+   border: 4px solid rgba(63, 117, 134, 0.397);
+   margin: 20px 0px;
+   background: rgba(115, 162, 165, 0.568);
+   border-radius: 100px;
+ }
+
+ hr {
+   border: 2px dashed rgba(168, 168, 168, 0.568);
+ }

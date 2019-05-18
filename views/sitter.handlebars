@@ -14,7 +14,7 @@
                                 <label class="font" for="">First Name</label>
                                 <input id="firstNameSitter" type="text">
                                 <label class="font" for="">Email</label>
-                                <input id="emailSitter" type="text">
+                                <input id="emailSitter" type="email">
                             </div>
                             <div class="col s12 l6">
                                 <label class="font" for="">Last Name</label>
@@ -23,16 +23,15 @@
                                 <input id="zipCodeSitter" type="text">
                             </div>
                             <div class="row">
-                                <div class="col s12">
+                                <div>
                                     <label class="font" for="">Create a password</label>
-                                    <input id="passwordSitter" type="text">
+                                    <input id="passwordSitter" type="password">
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div id="checkbox-label" class="row">
-                            <p class="font"><i style="margin-right: 10px;" class="material-icons prefix">local_hospital</i>Do you have your CPR
-                                certification?
+                            <p class="font"><i style="margin-right: 10px;" class="material-icons prefix">local_hospital</i>Do you have your CPR certification?
                                 <label>
                                     <input type="checkbox" id="yesCPR" class="filled-in boxNo" />
                                     <span class="textYes font">Yes</span>
@@ -72,7 +71,7 @@
                         </div>
                         <br>
                         <div id="checkbox-label" class="row">
-                            <pclass="font"><i style="margin-right: 10px;" class="material-icons prefix">directions_car</i>Do you have you own means of
+                            <p class="font"><i style="margin-right: 10px;" class="material-icons prefix">directions_car</i>Do you have you own means of
                                 transportation?
                                 <label>
                                     <input type="checkbox" id="yesTrans" class="filled-in boxNo" />
@@ -107,22 +106,30 @@
                         </div>
                         <!-- SUBMIT -->
                         <div class="center-align">
-                             <button class="btn waves-effect waves-light font" id="sitter-submit" style="margin-top: 160px;">Submit Form <i
-                                class="material-icons right">send</i></button>
+                            <button data-target="modal2" class="btn modal-trigger waves-effect waves-light font"
+                                id="sitter-submit" style="margin-top: 160px;">Submit Form <i
+                                    class="material-icons right">send</i></button>
                         </div>
-                       
+
                     </div>
                 </form>
 
             </content>
         </div>
-        <div id="modal2" class="modal">
+        <div id="modal2" class="modal"
+            style="background: rgba(115, 162, 165, 0.568); border: 4px solid rgb(81, 116, 121); height: 500px; padding-top: 45px;">
             <div class="modal-content">
-                <h4>Thanks for signing up as a sitter! 
-                </h4> <hr>
-                <p>Families from your area will be in touch!</p>
+                <h4
+                    style="color: rgb(255, 199, 45); text-align: center; letter-spacing: 4px; font-size: 50px; text-shadow: 1px 1px 2px black;">
+                    Thanks for signing up as a sitter!
+                </h4>
+                <hr>
+                <p id="p-modal"
+                    style="font-size: 25px; font-weight: normal; text-align: center; color: rgb(233, 233, 233); letter-spacing: 3px; text-shadow: 1px 1px 2px black;">
+                    Families from your area will be in touch!</p>
                 <div id="returnHome">
-                        <button onclick="window.location.href = '/'">Home</button>
+                    <button onclick="window.location.href = '/'"
+                        style="width: 150px; height: 60px; border-radius: 20px; margin: 5px; font-weight: bold; background: white; font-size: 18px; cursor: pointer; color: orange; text-shadow: 1px 1px 1px black; letter-spacing: 2x;">Home</button>
                 </div>
                 <div class="modal-footer">
                     <a id="cancel-modal" href="" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
@@ -136,78 +143,128 @@
     //single choice Parent day
     $(document).ready(function () {
         $('select').formSelect();
-    });
-    var $zipCode = $("#zipCode");
-    var $daySelectedParent = $("#daySelectedParent");
-    var $parentGetsitterBtn = $("#parent-submit");
-
-    // Get references to sitter-flow page elements
-    //var $sitterSubmit = $("#sitterSubmit");
-    var $firstNameSitter = $("#firstNameSitter");
-    var $lastNameSitter = $("#lastNameSitter");
-    var $emailSitter = $("#emailSitter");
-    var $passwordSitter = $("#passwordSitter");
-    var $picSitter = $("#picSitter");
-    var $zipCodeSitter = $("#zipCodeSitter");
-    var cpr;
-    var refs;
-    var pets;
-    var transportation;
-    var $commentSitter = $("#commentSitter");
-    // var $daySelectedSitter = $("#daySelectedSitter");
-
-    function validate() {
-        if (document.getElementById('yesPets').checked) {
-            pets = true;
-        } else {
-            pets = false
-        }
-        if (document.getElementById('yesCPR').checked) {
-            cpr = true;
-        } else {
-            cpr = false
-        }
-        if (document.getElementById('yesRef').checked) {
-            refs = true;
-        } else {
-            refs = false
-        }
-        if (document.getElementById('yesTrans').checked) {
-            transportation = true;
-        } else {
-            tansportation = false
-        }
-    }
-
-    $("#sitter-submit").on('click', function (event) {
-        event.preventDefault();
-        validate();
-        var values = $('.selectedStuff').val()
-        console.log(values)
-        var newSitter = {
-            "firstName": $firstNameSitter.val().trim(),
-            "lastName": $lastNameSitter.val().trim(),
-            "email": $emailSitter.val().trim(),
-            "password": $passwordSitter.val().trim(),
-            "pic": $picSitter.val().trim(),
-            "knowsCPR": cpr,
-            "petsOK": pets,
-            "hasReferences": refs,
-            "hasTransportation": transportation,
-            "comments": $commentSitter.val(),
-            "zipCode": parseInt($zipCodeSitter.val().trim()),
-            "daySelected": values
-        };
-        console.log(newSitter)
-        $.post("/api/sitters", newSitter)
-        .done(function (data) {
-            console.log(data)
-        });
-
-    $(document).ready(function() {
+        {{!-- event.preventDefault(); --}}
         $(".modal").modal();
-        //modalPop = function() {
-        //  $("#modal1").modal("open");
+        var $zipCode = $("#zipCode");
+        var $daySelectedParent = $("#daySelectedParent");
+        var $parentGetsitterBtn = $("#parent-submit");
+
+        // Get references to sitter-flow page elements
+        //var $sitterSubmit = $("#sitterSubmit");
+        var $firstNameSitter = $("#firstNameSitter");
+        var $lastNameSitter = $("#lastNameSitter");
+        var $emailSitter = $("#emailSitter");
+        var $passwordSitter = $("#passwordSitter");
+        var $picSitter = $("#picSitter");
+        var $zipCodeSitter = $("#zipCodeSitter");
+        var cpr;
+        var refs;
+        var pets;
+        var transportation;
+        var $commentSitter = $("#commentSitter");
+        var monday;
+        var tuesday;
+        var wednesday;
+        var thursday;
+        var friday;
+        var saturday;
+        var sunday;
+
+        function validate() {
+            if (document.getElementById('yesPets').checked) {
+                pets = true;
+            } else {
+                pets = false
+            }
+            if (document.getElementById('yesCPR').checked) {
+                cpr = true;
+            } else {
+                cpr = false
+            }
+            if (document.getElementById('yesRef').checked) {
+                refs = true;
+            } else {
+                refs = false
+            }
+            if (document.getElementById('yesTrans').checked) {
+                transportation = true;
+            } else {
+                tansportation = false
+            }
         };
+
+        function formatDays(arr) {
+            if (arr.includes("1")) {
+                monday = true;
+            } else {
+                monday = false;
+            }
+            if (arr.includes("2")) {
+                tuesday = true;
+            } else {
+                tuesday = false;
+            }
+            if (arr.includes("3")) {
+                wednesday = true;
+            } else {
+                wednesday = false;
+            }
+            if (arr.includes("4")) {
+                thursday = true;
+            } else {
+                thursday = false;
+            }
+            if (arr.includes("5")) {
+                friday = true;
+            } else {
+                friday = false;
+            }
+            if (arr.includes("6")) {
+                saturday = true;
+            } else {
+                saturday = false;
+            }
+            if (arr.includes("7")) {
+                sunday = true;
+            } else {
+                sunday = false;
+            }
+        };
+
+        $("#sitter-submit").on('click', function (event) {
+            event.preventDefault();
+            validate();
+            var values = $('.selectedStuff').val()
+            console.log(values)
+            formatDays(values);
+            var newSitter = {
+                "firstName": $firstNameSitter.val().trim(),
+                "lastName": $lastNameSitter.val().trim(),
+                "email": $emailSitter.val().trim(),
+                "password": $passwordSitter.val().trim(),
+                "pic": $picSitter.val().trim(),
+                "knowsCPR": cpr,
+                "petsOK": pets,
+                "hasReferences": refs,
+                "hasTransportation": transportation,
+                "comments": $commentSitter.val(),
+                "zipCode": parseInt($zipCodeSitter.val().trim()),
+                "d1": monday,
+                "d2": tuesday,
+                "d3": wednesday,
+                "d4": thursday,
+                "d5": friday,
+                "d6": saturday,
+                "d7": sunday
+            };
+            console.log(newSitter)
+            $.post("/api/sitters", newSitter)
+                .done(function (data) {
+                    console.log(data)
+                });
+
+            $(".modal").modal();
+        });
     });
+
 </script>
