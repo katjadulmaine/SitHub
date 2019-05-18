@@ -240,8 +240,8 @@
             event.preventDefault();
             validate();
             var values = $('.selectedStuff').val()
-            console.log(values)
             formatDays(values);
+            console.log(values)
             var newSitter = {
                 "firstName": $firstNameSitter.val().trim(),
                 "lastName": $lastNameSitter.val().trim(),
