@@ -4,28 +4,28 @@
         <div class="col s3">
 
         </div>
-        <div id="content" class="col s6">
+        <div id="content" class="col s6 z-depth-3">
             <content>
                 <h3 class="center">Babysitter's Form</h3>
-                <form class="col s12">
+                <form class="col s12" name="sitters" id="sittersForm">
                     <div class="row">
                         <div class="row">
                             <div class="col s6">
                                 <label for="">First Name</label>
-                                <input id="firstNameSitter" type="text">
+                                <input id="firstNameSitter" type="text" name="firstNameSitter">
                                 <label for="">Email</label>
-                                <input id="emailSitter" type="email">
+                                <input id="emailSitter" type="email" name="emailSitter">
                             </div>
                             <div class="col s6">
                                 <label for="">Last Name</label>
-                                <input id="lastNameSitter" type="text" name="lastName">
+                                <input id="lastNameSitter" type="text" name="lastNameSitter">
                                 <label for="">Zip Code</label>
-                                <input id="zipCodeSitter" type="text">
+                                <input id="zipCodeSitter" type="text" name="zipCodeSitter">
                             </div>
                             <div class="row">
                                 <div>
                                     <label for="">Create a password</label>
-                                    <input id="passwordSitter" type="password">
+                                    <input id="passwordSitter" type="password" name="passwordSitter">
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                             </p>
                         </div>
                         <div class="col s12">
-                            <input id="picSitter" type="text" placeholder="Image URL" style="margin-top: 40px;">
+                            <input id="picSitter" type="text" placeholder="Image URL" style="margin-top: 40px;" name="picSitter">
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix" style="margin-top: 40px;">comment</i>
@@ -98,7 +98,7 @@
                             <label id="form-label" for="textarea1" style="margin-top: 40px;">Add a comment </label>
                         </div>
                         <div class="input-field col s12">
-                            <select multiple class="selectedStuff" id="day">
+                            <select multiple class="selectedStuff" id="day" name="daySitter">
                                 <option value="" disabled selected>Choose Your Days</option>
                                 <option value="1">Monday</option>
                                 <option value="2">Tuesday</option>
@@ -111,7 +111,7 @@
                         </div>
                         <!-- SUBMIT -->
                         <div class="center-align">
-                            <button data-target="modal2" class="btn modal-trigger waves-effect waves-light"
+                            <button  class="btn waves-effect waves-light"
                                 id="sitter-submit" style="margin-top: 160px;">Submit Form <i
                                     class="material-icons right">send</i></button>
                         </div>
@@ -148,7 +148,7 @@
     //single choice Parent day
     $(document).ready(function () {
         $('select').formSelect();
-        $(".modal").modal();
+        $("#modal2").modal();
         var $zipCode = $("#zipCode");
         var $daySelectedParent = $("#daySelectedParent");
         var $parentGetsitterBtn = $("#parent-submit");
@@ -237,37 +237,42 @@
 
         $("#sitter-submit").on('click', function (event) {
             event.preventDefault();
-            validate();
-            var values = $('.selectedStuff').val()
-            formatDays(values);
-            console.log(values)
-            var newSitter = {
-                "firstName": $firstNameSitter.val().trim(),
-                "lastName": $lastNameSitter.val().trim(),
-                "email": $emailSitter.val().trim(),
-                "password": $passwordSitter.val().trim(),
-                "pic": $picSitter.val().trim(),
-                "knowsCPR": cpr,
-                "petsOK": pets,
-                "hasReferences": refs,
-                "hasTransportation": transportation,
-                "comments": $commentSitter.val(),
-                "zipCode": parseInt($zipCodeSitter.val().trim()),
-                "d1": monday,
-                "d2": tuesday,
-                "d3": wednesday,
-                "d4": thursday,
-                "d5": friday,
-                "d6": saturday,
-                "d7": sunday
-            };
-            console.log(newSitter)
-            $.post("/api/sitters", newSitter)
-                .done(function (data) {
-                    console.log(data)
-                });
+            if ($("#sittersForm").valid()) {
+                validate();
+                var values = $('.selectedStuff').val()
+                formatDays(values);
+                console.log(values)
+                var newSitter = {
+                    "firstName": $firstNameSitter.val().trim(),
+                    "lastName": $lastNameSitter.val().trim(),
+                    "email": $emailSitter.val().trim(),
+                    "password": $passwordSitter.val().trim(),
+                    "pic": $picSitter.val().trim(),
+                    "knowsCPR": cpr,
+                    "petsOK": pets,
+                    "hasReferences": refs,
+                    "hasTransportation": transportation,
+                    "comments": $commentSitter.val(),
+                    "zipCode": parseInt($zipCodeSitter.val().trim()),
+                    "d1": monday,
+                    "d2": tuesday,
+                    "d3": wednesday,
+                    "d4": thursday,
+                    "d5": friday,
+                    "d6": saturday,
+                    "d7": sunday
+                };
+                console.log(newSitter)
+                $.post("/api/sitters", newSitter)
+                    .done(function (data) {
+                        $("#modal2").modal();
+                        console.log(data)
+                    });
 
-            $(".modal").modal();
+                //$("#modal2").modal();
+            } else {
+                alert("Please enter all required fields")
+            }
         });
     });
 
