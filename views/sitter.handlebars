@@ -262,7 +262,7 @@
                 console.log(newSitter)
                 $.post("/api/sitters", newSitter)
                     .done(function (data) {
-                        $("#modal2").modal();
+                        $("#modal2").modal("open");
                         console.log(data)
                     });
 
