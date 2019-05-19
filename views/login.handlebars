@@ -1,0 +1,159 @@
+<div class="container">
+    <div class="row">
+        <div class="col s3">
+
+        </div>
+        <div id="content" class="col s6">
+            <!-- icon -->
+            <a id="brand-icon" href="#"><i class="fas fa-baby-carriage fa-5x"></i></a>
+
+            <content>
+
+                <h1>Sithub</h1>
+                <br>
+                <h3>Please sign in and update your availability as a sitter</h3>
+                <form action="">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="sit-email" type="email" class="validate">
+                            <label for="sit-email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="sit-pass" type="password" class="validate">
+                            <label for="sit-pass">Password</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <select multiple class="selectedStuff" id="update-day">
+                            <option value="" disabled selected>Choose Your Days</option>
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select>
+                    </div>
+                    <div class="center-align">
+                        <button class="btn waves-effect waves-light" id="login-submit" style="margin-top: 160px;">Update
+                            Availability<i class="material-icons right">send</i></button>
+                    </div>
+
+                </form>
+                <div id="login-message" class="col s12">
+
+                </div>
+
+            </content>
+
+        </div>
+
+    </div>
+</div>
+<a href="/">← Back To Home</a>
+
+<div id="modal3" class="modal"
+    style="background: rgba(115, 162, 165, 0.568); border: 4px solid rgb(81, 116, 121); height: 500px; padding-top: 45px;">
+    <div class="modal-content">
+        <h4
+            style="color: rgb(255, 199, 45); text-align: center; letter-spacing: 4px; font-size: 50px; text-shadow: 1px 1px 2px black;">
+            Thank you, your availability has been updated.
+        </h4>
+        <hr>
+        <p id="p-modal"
+            style="font-size: 25px; font-weight: normal; text-align: center; color: rgb(233, 233, 233); letter-spacing: 3px; text-shadow: 1px 1px 2px black;">
+            Families from your area will be in touch!</p>
+        <div id="back-btn" style="display: flex; justify-content: center;">
+            <button onclick="window.location.href = '/'"
+                style="width: 150px; height: 60px; border-radius: 20px; margin: 5px; font-weight: bold; background: white; font-size: 18px; cursor: pointer; color: orange; text-shadow: 1px 1px 1px black; letter-spacing: 2x;">Home</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('select').formSelect();
+        var $emailSitter = $("#sit-email");
+        var $passwordSitter = $("#sit-pass");
+        var monday;
+        var tuesday;
+        var wednesday;
+        var thursday;
+        var friday;
+        var saturday;
+        var sunday;
+
+        function formatDays(arr) {
+            if (arr.includes("1")) {
+                monday = true;
+            } else {
+                monday = false;
+            }
+            if (arr.includes("2")) {
+                tuesday = true;
+            } else {
+                tuesday = false;
+            }
+            if (arr.includes("3")) {
+                wednesday = true;
+            } else {
+                wednesday = false;
+            }
+            if (arr.includes("4")) {
+                thursday = true;
+            } else {
+                thursday = false;
+            }
+            if (arr.includes("5")) {
+                friday = true;
+            } else {
+                friday = false;
+            }
+            if (arr.includes("6")) {
+                saturday = true;
+            } else {
+                saturday = false;
+            }
+            if (arr.includes("7")) {
+                sunday = true;
+            } else {
+                sunday = false;
+            }
+        };
+        $("#login-submit").on('click', function (event) {
+            event.preventDefault();
+            var values = $('.selectedStuff').val()
+            formatDays(values);
+            console.log(values)
+            var newSitter = {
+                "email": $emailSitter.val().trim(),
+                "password": $passwordSitter.val().trim(),
+                "d1": monday,
+                "d2": tuesday,
+                "d3": wednesday,
+                "d4": thursday,
+                "d5": friday,
+                "d6": saturday,
+                "d7": sunday
+            };
+            console.log(newSitter)
+            $.ajax({
+                type: "PUT",
+                url: "/api/sitters/login",
+                data: newSitter,
+            }) .done(function (data) {
+                    console.log(data)
+                    if (data[0] === 0) {
+                        $("#login-message").append("<p id='error-msg' style='text-align: center;'>Email and Password do not match. Please try again or <a id='sign-up-here' href='/sitter'>Sign Up Here</a></p>")
+                    }
+                    else {
+                        $("#modal3").modal("open");
+                    };
+                });
+        });
+    });
+</script>
