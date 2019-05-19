@@ -5,6 +5,7 @@ body {
 }
 main {
   margin: 0px 0px 0px 0px;
+  flex: 1 0 auto;
 }
 h1 {
   letter-spacing: 4px;
@@ -32,7 +33,7 @@ h3 {
   font-family: Oswald;
   font-size: 17px;
 }
-.col.s6, .col.s12 {
+.col.s6, .col.s12{
   padding: 0px 40px;
 }
 /* Icons */
@@ -53,12 +54,19 @@ i.material-icons-prefix {
 nav {
   background: rgb(252, 194, 34);
 }
+
 footer {
   background: rgb(83, 119, 124);
   color: white;
-  /* position: absolute;
-  bottom:0px */
+  margin-top: 60px;
 }
+
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .brand-logo {
   margin: 0px 0px 0px 60px;
 }
