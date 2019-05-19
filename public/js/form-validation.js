@@ -26,10 +26,7 @@ $(function() {
         required: true,
         email: true
       },
-      passwordSitter: {
-        required: true,
-        minLength: 5
-      },
+      passwordSitter: "required",
       picSitter: "required",
       daySitter: "required"
     },
