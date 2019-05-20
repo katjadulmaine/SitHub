@@ -76,7 +76,7 @@ module.exports = function(app) {
       lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
-      pic: req.body.pic,
+      pic: req.body.pic.trim(),
       knowsCPR: req.body.knowsCPR,
       petsOK: req.body.petsOK,
       hasReferences: req.body.hasReferences,
