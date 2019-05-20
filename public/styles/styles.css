@@ -7,15 +7,16 @@ main {
   margin: 0px 0px 0px 0px;
   flex: 1 0 auto;
 }
-h1 {
+#name-brand {
   letter-spacing: 4px;
   text-align: center;
   color: rgb(255, 208, 0);
   font-family: Concert One;
   text-shadow: 2px 2px 2px white,
                4px 4px 2px black;
-  font-size: 160px;
-  margin: 100px 0px 0px 0px;
+  font-size: 15vw;
+  margin: auto;
+  width: 60%;
 }
 h3 {
   margin: 50px 0px 80px 0px;
@@ -68,7 +69,10 @@ footer {
 }
 
 .brand-logo {
-  margin: 0px 0px 0px 60px;
+  margin: auto;
+  width: 60%;
+  position: relative;
+  left: 2vw;
 }
 
 #checkbox-label {
@@ -104,3 +108,4 @@ hr {
 form .error {
   color: #ff0000;
 }
+
