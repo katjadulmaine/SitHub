@@ -70,6 +70,7 @@ module.exports = function(app) {
   //Post new Sitter row
   app.post("/api/sitters", function(req, res) {
     console.log("hit");
+    console.log(req.body)
     db.Sitter.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
