@@ -13,7 +13,7 @@ To use SitHub as a parent, you must first fill out our parent form. Upon complet
 *The information contained in member profiles, job posts, and applications is supplied by babysitters and caregivers themselves and is not information generated or verified by SitHub. SitHub does not employ andy babysitters or caregivers directly nor are we responsible for the conduct of any care provider or care seeker*
 
 ## Try It Out
-[Visit the Heroku Site](https://project2-sithub.herokuapp.com/)
+[Visit the Heroku Site](https://safe-ocean-84520.herokuapp.com/)
 
 ## Technologies Used
 - HTML
